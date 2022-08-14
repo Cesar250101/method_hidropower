@@ -1,0 +1,328 @@
+<odoo>
+  <data>
+    <record id="act_view_invoice_method" model="ir.actions.act_window">
+        <field name="name">Informes de Entrada</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">method_hidropower.informe_entrada</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('repair_order_id','=',active_id)]</field>
+        <field name="target">fullscreen</field>
+    </record>
+
+    <record id="act_view_invoice_method_salida" model="ir.actions.act_window">
+        <field name="name">Informes de Salida</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">method_hidropower.informe_salida</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('repair_order_id','=',active_id)]</field>
+        <field name="target">fullscreen</field>
+    </record>
+
+      <!-- Formulario de Produtos -->
+    <record id="method_hidropower.view_repair_order_form" model="ir.ui.view">
+      <field name="name">method.hidropower.view.repair.order.form</field>
+      <field name="model">repair.order</field>
+      <field name="inherit_id" ref="repair.view_repair_order_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//button[@name='action_created_invoice']" position="after">      
+          <button name="%(method_hidropower.act_view_invoice_method)d" type="action" class="oe_stat_button" icon="fa-pencil-square-o" string="Informes Entradas" groups="account.group_account_invoice">
+          </button>      
+          <button name="%(method_hidropower.act_view_invoice_method_salida)d" type="action" class="oe_stat_button" icon="fa-pencil-square-o" string="Informes Salida" groups="account.group_account_invoice">
+          </button>      
+
+        </xpath>                    
+        <xpath expr="//field[@name='address_id']" position="after">
+          <field name="informe_entrada_ids" />
+        </xpath>          
+        <xpath expr="//notebook" position="inside">
+          <page name="valorizacion" string="Valorización">
+            <group>
+                <group name="vastago" string="Vastago">
+                  <field name="vastago_diametro"/>
+                  <field name="vastago_largo"/>
+                </group>
+                <group name="botella" string="Botella">
+                  <field name="botella_diametro_exterior"/>
+                  <field name="botella_diametro_interior"/>
+                  <field name="botella_largo"/>
+                  <field name="longitud_cromo"/>
+                  <field name="long_int_botella"/>
+                </group>
+              </group>
+          </page>
+        </xpath>        
+      </field>
+    </record>
+
+    <!-- model.name tree view -->
+    <record id="method_hidropower.informe_entrada_view_tree" model="ir.ui.view">
+      <field name="name">method.hidropower.informe.entrada.view.tree</field>
+      <field name="model">method_hidropower.informe_entrada</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="partner_id" />
+          <field name="contacto" />
+          <field name="referencia" />
+        </tree>
+      </field>
+    </record>
+
+    <!-- model.name tree view -->
+    <record id="method_hidropower.informe_salida_view_tree" model="ir.ui.view">
+      <field name="name">method.hidropower.informe.salida.view.tree</field>
+      <field name="model">method_hidropower.informe_salida</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name" />
+          <field name="partner_id" />
+          <field name="repair_order_id" />
+        </tree>
+      </field>
+    </record>    
+
+
+    <!-- informe.salida form view -->
+    <record id="method_hidropower.informe_salida_view_form" model="ir.ui.view">
+      <field name="name">method.hidropower.informe.salida.view.form</field>
+      <field name="model">method_hidropower.informe_salida</field>
+      <field name="arch" type="xml">
+      <form string="">
+        <header>
+              <!-- <button name="get_access_token" string="Obtener Token" type="object" class="oe_highlight"/> 
+              <button name="obtiene_odenes" string="Obtener Ordenes" type="object" class="oe_highlight" sequence="3"/>  -->
+        </header>      
+        <sheet>
+            <group name="salida" string="Informe de Salida">
+              <group>
+                <group name="partner" string="Cliente">
+                  <field name="name" />
+                  <field name="partner_id" />
+                  <field name="repair_order_id" />
+                  <field name="mecanico" />
+                </group>
+                <!-- <field name="img_cilindro_completo" widget="image" class="oe_avatar" />                 -->
+
+                <group name="cilindro" string="Datos Cilindro">
+                  <field name="fecha_test"/>
+                  <field name="nombre_cilindro"/>
+                  <field name="modelo_cilindro"/>                  
+                  <field name="presion_max"/>
+                  <field name="presion_min"/>
+                  <field name="presion_util"/>
+                  <field name="duracion_text"/>
+                  <field name="duracion_text_senso"/>
+                  <field name="hora_text"/>
+                </group>
+                <group name="otros" string="Otros">
+                  <field name="otros" widget="many2many_checkboxes"/>
+                </group>
+                <group name="postura_sellos" string="Postura de Sellos">
+                  <field name="img_1"/>
+                </group>
+                <group name="install_sellos_tapa" string="Instalación de sellos Tapa o Prensa.">
+                  <field name="img_2_1"/>
+                  <field name="select_2_1"/>
+                  <field name="img_2_2"/>
+                  <field name="select_2_2"/>
+                  <field name="img_2_3"/>
+                  <field name="select_2_3"/>
+                </group>
+                <group name="sellos_piston" string="Instalación de sellos Pistón.">
+                  <field name="img_3_1"/>
+                  <field name="select_3_1"/>
+                  <field name="img_3_2"/>
+                  <field name="select_3_2"/>                  
+                  <field name="img_3_3"/>
+                  <field name="select_3_3"/>                  
+
+                </group>
+                <group name="ensamble_equipo" string="Ensamble de equipo.">
+                  <field name="img_4_1"/>
+                  <field name="img_4_2"/>             
+                  <field name="img_4_3"/>             
+                </group>
+                <group name="llenado_aceite" string="Prueba de llenado de aceite y recorrido de vástago.">
+                  <field name="img_5_1"/>
+                </group>
+                <group name="presion_prensa_cilindro" string="Presión interna área base prensa de cilindro.">
+                  <field name="img_6_1"/>
+                  <field name="txt_6_1"/>
+                </group>
+                <group name="presion_piston_cilindro" string="Presión interna área base pistón de cilindro.">
+                  <field name="img_7_1"/>
+                  <field name="txt_7_1"/>
+                </group>
+                <group name="reloj_comparador" string="Imagen presión en cilindro junto a reloj comparador">
+                  <field name="img_8_1"/>
+                  <field name="txt_8_1"/>
+                </group>
+                <group name="cierre" string="Cierre de proceso.">
+                  <field name="img_9_1"/>
+                  <field name="txt_9_1"/>
+                </group>
+
+                <group name="obs" string="Conclusiones">
+                  <field name="conclusion"/>  
+                </group>
+                
+              </group>
+            </group>
+        </sheet>
+      </form>
+      </field>
+    </record>    
+
+    <!-- informe.entrada form view -->
+    <record id="method_hidropower.informe_entrada_view_form" model="ir.ui.view">
+      <field name="name">method.hidropower.informe.entrada.view.form</field>
+      <field name="model">method_hidropower.informe_entrada</field>
+      <field name="arch" type="xml">
+      <form string="">
+        <header>
+              <!-- <button name="get_access_token" string="Obtener Token" type="object" class="oe_highlight"/> 
+              <button name="obtiene_odenes" string="Obtener Ordenes" type="object" class="oe_highlight" sequence="3"/>  -->
+        </header>      
+        <sheet>
+            <group name="entrada" string="Informe de Entrada">
+              <group>
+                <group name="partner" string="Cliente">
+                  <field name="name" />
+                  <field name="partner_id" />
+                  <field name="contacto" />
+                  <field name="referencia" />
+                  <field name="repair_order_id" />
+                  <field name="img_cilindro_completo"/>                                  
+                </group>
+                <!-- <field name="img_cilindro_completo" widget="image" class="oe_avatar" />                 -->
+
+                <group name="desarme" string="Vista general del desarme">
+                  <field name="img_desarme"/>
+                  <field name="txt_desarme"/>                  
+                </group>
+                <group name="vastago" string="Vista general del vástago">
+                  <field name="img_vastago"/>
+                  <field name="select_2_1"/>
+                  <field name="select_2_2"/>                  
+                </group>
+                <group name="vastago_daño" string="Fotografía de daño de vástago">
+                  <field name="img_vastago_daño"/>
+                  <field name="txt_vastago_daño"/>                  
+                </group>
+                <group name="anclaje" string="Vista general de anclaje de vástago">
+                  <field name="img_anclaje_vastago"/>
+                  <field name="select_3_1"/>
+                  <field name="select_3_3"/>
+                  <field name="select_5_2"/>
+                  <field name="select_3_4"/>
+                  <field name="select_3_5"/>
+                  <field name="select_3_6"/>                  
+                </group>
+                <group name="botella" string="Vista general de botella">
+                  <field name="img_botella"/>
+                  <field name="select_4_1"/>
+                  <field name="select_4_2"/>
+                  <field name="select_4_3"/>                  
+                </group>
+                <group name="zoom_botella" string="Zoom interior de botella">
+                  <field name="img_interior_botella"/>
+                  <field name="select_4_4"/>                  
+                </group>
+                <group name="anclaje_botella" string="Anclaje de botella">
+                  <field name="img_anclaje_botella"/>
+                  <field name="select_5_1"/>
+                  <field name="select_5_2"/>
+                  <field name="select_5_3"/>
+                  <field name="select_5_4"/>
+                  <field name="select_5_5"/>
+                  <field name="select_5_6"/>                  
+                </group>
+                <group name="prensa" string="Vista general tapa prensa">
+                  <field name="img_tapa_prensa"/>
+                  <field name="select_6_1"/>
+                  <field name="select_6_2"/>                  
+                </group>
+                <group name="piston" string="Vista general pistón">
+                  <field name="img_piston"/>
+                  <field name="select_7_1"/>
+                  <field name="select_7_2"/>                  
+                </group>
+                <group name="obs" string="Observaciones">
+                  <field name="observaciones"/>  
+                </group>
+                
+              </group>
+            </group>
+        </sheet>
+      </form>
+      </field>
+    </record>    
+
+    <!-- model.name action window -->
+    <record id="method_hidropower.informe_salida_action" model="ir.actions.act_window">
+      <field name="name">Informe de Salida</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">method_hidropower.informe_salida</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_type">form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          <!-- Add Text Here -->
+        </p><p>
+          <!-- More details about what a user can do with this object will be OK --> 
+        </p>
+      </field>
+    </record>
+
+
+    <!-- model.name action window -->
+    <record id="method_hidropower.informe_entrada_action" model="ir.actions.act_window">
+      <field name="name">Informe de Entrada</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">method_hidropower.informe_entrada</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_type">form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          <!-- Add Text Here -->
+        </p><p>
+          <!-- More details about what a user can do with this object will be OK --> 
+        </p>
+      </field>
+    </record>
+
+    <!-- model.name tree view -->
+    <record id="method_hidropower.otros_servicios_tree" model="ir.ui.view">
+      <field name="name">method.hidropower.otros.servicios.tree</field>
+      <field name="model">method_hidropower.otros</field>
+      <field name="arch" type="xml">
+        <tree editable="bottom">
+          <field name="name" />
+        </tree>
+      </field>
+    </record>    
+
+    <!-- model.name action window -->
+    <record id="method_hidropower.otros_servicios_action" model="ir.actions.act_window">
+      <field name="name">Otros Servicios</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">method_hidropower.otros</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_type">form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          <!-- Add Text Here -->
+        </p><p>
+          <!-- More details about what a user can do with this object will be OK --> 
+        </p>
+      </field>
+    </record>
+
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="method_hidropower_informe_entrada_menu" name="Informes Técnicos" parent="repair.menu_repair_order" sequence="1"/>
+    <menuitem id="method_hidropower.informe_entrada_menu_act" name="Informe de Entrada" parent="method_hidropower_informe_entrada_menu" action="method_hidropower.informe_entrada_action" sequence="1"/>
+    <menuitem id="method_hidropower.informe_salida_menu_act" name="Informe de Salida" parent="method_hidropower_informe_entrada_menu" action="method_hidropower.informe_salida_action" sequence="1"/>
+    <menuitem id="method_hidropower.otros_servicios" name="Otros Servicios" parent="method_hidropower_informe_entrada_menu" action="method_hidropower.otros_servicios_action" sequence="1"/>
+
+  </data>
+</odoo>

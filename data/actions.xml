@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="act_view_invoice_method" model="ir.actions.act_window">
+        <field name="name">Informes de Entrada</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">method_hidropower.informe_entrada</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('repair_order_id','=',active_id)]</field>
+        <field name="target">new</field>
+    </record>
+</odoo>
+

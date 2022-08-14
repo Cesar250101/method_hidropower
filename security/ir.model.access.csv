@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+informe_entrada,Informe Entrada,method_hidropower.model_method_hidropower_informe_entrada,stock.group_stock_user,1,1,1,1
+informe_salida,Informe Salida,method_hidropower.model_method_hidropower_informe_salida,stock.group_stock_user,1,1,1,1
