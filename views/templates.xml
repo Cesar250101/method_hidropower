@@ -259,39 +259,39 @@
                                     </tr>
                                     <tr>
                                         <td style="width:40%">Ø Exterior</td>
-                                        <td style="width:10%"></td>
+                                        <td style="width:10%"><t t-esc="o.vastago_exterior"/></td>
                                         <td style="width:40%">Ø Exterior</td>
-                                        <td style="width:10%"></td>
+                                        <td style="width:10%"><t t-esc="o.botella_exterior"/></td>
                                     </tr>
                                     <tr>
-                                        <td>Longitud de cromo</td>
-                                        <td></td>
+                                        <td>Longitud de cromo</td>                                        
+                                        <td><t t-esc="o.vastago_longitud_cromo"/></td>
                                         <td>Ø Interior</td>
-                                        <td></td>                                            
+                                        <td><t t-esc="o.botella_interior"/></td>                                            
                                     </tr>
                                     <tr>
                                         <td>Longitud de centro</td>
-                                        <td></td>
+                                        <td><t t-esc="o.vastago_longitud_centro"/></td>
                                         <td>Longitud interior</td>
-                                        <td></td>
+                                        <td><t t-esc="o.botella_longitud_interior"/></td>
                                     </tr>
                                     <tr>
                                         <td>Longitud total</td>
-                                        <td></td>
+                                        <td><t t-esc="o.vastago_longitud_total"/></td>
                                         <td>Longitud de centro</td>
-                                        <td></td>
+                                        <td><t t-esc="o.botella_longitud_centro"/></td>
                                     </tr>
                                     <tr>
                                         <td>Flexión</td>
-                                        <td></td>
+                                        <td><t t-esc="o.vastago_flexion"/></td>
                                         <td>Longitud total</td>
-                                        <td></td>
+                                        <td><t t-esc="o.botella_longitud_total"/></td>
                                     </tr>
                                     <tr>
                                         <td>Tipo de cromo</td>
-                                        <td></td>
+                                        <td><t t-esc="o.vastago_tipo_cromo"/></td>
                                         <td>Ovalación</td>
-                                        <td></td>
+                                        <td><t t-esc="o.botella_ovalación"/></td>
                                     </tr>
                                 </table>                                    
                             </div>
@@ -306,27 +306,27 @@
                                     </tr>
                                     <tr>
                                         <td style="width:40%">Ø Exterior</td>
-                                        <td style="width:10%"></td>
+                                        <td style="width:10%"><t t-esc="o.piston_exterior"/></td>
                                         <td style="width:40%">Ø Exterior</td>
-                                        <td style="width:10%"></td>
+                                        <td style="width:10%"><t t-esc="o.prensa_exterior"/></td>
                                     </tr>
                                     <tr>
                                         <td>Ø Interior</td>
-                                        <td></td>
+                                        <td><t t-esc="o.piston_interior"/></td>
                                         <td>Ø Interior</td>
-                                        <td></td>                                            
+                                        <td><t t-esc="o.prensa_interior"/></td>                                            
                                     </tr>
                                     <tr>
                                         <td>Ancho</td>
-                                        <td></td>
+                                        <td><t t-esc="o.piston_ancho"/></td>
                                         <td>Ancho</td>
-                                        <td></td>
+                                        <td><t t-esc="o.prensa_ancho"/></td>
                                     </tr>
                                     <tr>
                                         <td>Material</td>
-                                        <td></td>
+                                        <td><t t-esc="o.piston_material"/></td>
                                         <td>Material</td>
-                                        <td></td>
+                                        <td><t t-esc="o.prensa_material"/></td>
                                     </tr>
                                 </table>                                    
                             </div>
@@ -341,27 +341,27 @@
                                     </tr>
                                     <tr>
                                         <td style="width:40%">Ø Exterior (buje/rotula)</td>
-                                        <td style="width:10%"></td>
+                                        <td style="width:10%"><t t-esc="o.anclaje_vastago_exterior"/></td>
                                         <td style="width:40%">Ø Exterior (buje/rotula)</td>
-                                        <td style="width:10%"></td>
+                                        <td style="width:10%"><t t-esc="o.anclaje_botella_exterior"/></td>
                                     </tr>
                                     <tr>
                                         <td>Ø Interior (buje/rotula)</td>
-                                        <td></td>
+                                        <td><t t-esc="o.anclaje_vastago_interior"/></td>
                                         <td>Ø Interior (buje/rotula)</td>
-                                        <td></td>                                            
+                                        <td><t t-esc="o.anclaje_botella_interior"/></td>                                            
                                     </tr>
                                     <tr>
                                         <td>Ancho</td>
-                                        <td></td>
+                                        <td><t t-esc="o.anclaje_vastago_ancho"/></td>
                                         <td>Ancho</td>
-                                        <td></td>
+                                        <td><t t-esc="o.anclaje_botella_ancho"/></td>
                                     </tr>
                                     <tr>
                                         <td>Material</td>
-                                        <td></td>
+                                        <td><t t-esc="o.anclaje_vastago_material"/></td>
                                         <td>Material</td>
-                                        <td></td>
+                                        <td><t t-esc="o.anclaje_botella_material"/></td>
                                     </tr>
                                 </table>                                    
                             </div>                            
@@ -414,7 +414,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <img t-if="o.img_desarme" t-att-src="'data:image/png;base64,%s' % to_text(o.img_desarme)" style="max-height: 150px;max-width: 150px;"/>
+                                    <img t-if="o.img_desarme" t-att-src="'data:image/png;base64,%s' % to_text(o.img_desarme)"  width="100px" height="300"/>
                                 </td>
                                 <td>
                                     <span t-esc="o.txt_desarme" />
@@ -423,17 +423,26 @@
                             <tr><td><strong>2.Vista general del vástago.</strong></td></tr>
                             <tr>
                                 <td>
-                                    <img t-if="o.img_vastago" t-att-src="'data:image/png;base64,%s' % to_text(o.img_vastago)" style="max-height: 150px;max-width: 150px;"/>
+                                    <img t-if="o.img_vastago_1" t-att-src="'data:image/png;base64,%s' % to_text(o.img_vastago_1)" width="100px" height="300"/><br></br>
+                                    <img t-if="o.img_vastago_2" t-att-src="'data:image/png;base64,%s' % to_text(o.img_vastago_2)" width="100px" height="300"/><br></br>
+                                    <img t-if="o.img_vastago_3" t-att-src="'data:image/png;base64,%s' % to_text(o.img_vastago_3)" width="100px" height="300"/><br></br>
                                 </td>
                                 <td>
-                                    <span>Vástago del componente se presenta </span><span t-field="o.select_2_1" /><br></br>
-                                    <span>Acción a realizar </span><span t-field="o.select_2_2" />
+                                    <span>2.1 Vástago del componente se presenta :</span>
+                                    <t t-foreach="o.select_2_1" t-as="l">                                
+                                        <li><span t-field="l.name" /></li>
+                                    </t>                                
+
+                                    <span>2.2 Acción a realizar :</span>
+                                    <t t-foreach="o.select_2_2" t-as="l">                                
+                                        <li><span t-field="l.name" /></li>
+                                    </t>                                
                                 </td>
                             </tr>
                             <tr><td><strong>2.1 Fotografías de daños de vástago.</strong></td></tr>
                             <tr>
                                 <td>
-                                    <img t-if="o.img_vastago_daño" t-att-src="'data:image/png;base64,%s' % to_text(o.img_vastago_daño)" style="max-height: 150px;max-width: 150px;"/>
+                                    <img t-if="o.img_vastago_daño" t-att-src="'data:image/png;base64,%s' % to_text(o.img_vastago_daño)" width="100px" height="300"/>
                                 </td>
                                 <td>
                                     <span></span><span t-field="o.txt_vastago_daño" />
@@ -442,13 +451,35 @@
                             <tr><td><strong>3.Vista general de anclaje de vástago</strong></td></tr>
                             <tr>
                                 <td>
-                                    <img t-if="o.img_anclaje_vastago" t-att-src="'data:image/png;base64,%s' % to_text(o.img_anclaje_vastago)" style="max-height: 150px;max-width: 150px;"/>
+                                    <img t-if="o.img_anclaje_vastago" t-att-src="'data:image/png;base64,%s' % to_text(o.img_anclaje_vastago)" width="100px" height="300"/>
                                 </td>
                                 <td>
-                                    <span>Anclaje del vástago se encuentra </span><span t-field="o.select_3_1" /><br></br>
-                                    <span t-field="o.select_3_3" /><span> del anclaje se encuentra </span>
-                                    <span t-field="o.select_3_4" /><br></br>
-                                    <span>Acciones a realizar : </span><span t-field="o.select_3_2" />;<span t-field="o.select_3_5" />,
+                                    <span>3.1 Anclaje del vástago se encuentra </span>
+                                    <t t-foreach="o.select_3_1" t-as="l">                                
+                                        <li><span t-field="l.name"/></li>
+                                    </t> 
+                                    <span>3.2 Acción a Realizar</span>
+                                    <t t-foreach="o.select_3_2" t-as="l">                                
+                                        <li><span t-field="l.name"/></li>
+                                    </t> 
+                                    <!--3.3-->
+                                    <span>3.3 </span>
+                                    <span t-field="o.select_3_3" /><br></br>
+                                    <span>3.4 </span>
+                                    <t t-foreach="o.select_3_4" t-as="l">                                
+                                        <li><span t-field="l.name" /></li>
+                                    </t> 
+                                    <span>3.5 Acción a realizar con buje o rotula </span>
+                                        <span t-field="o.select_3_5" /><br></br>
+                                    <span>3.6 Acción a realizar con buje o rotula: </span>
+                                    <span t-field="o.select_3_6" /><br></br>
+
+                                    <span>3.7 Resumen de acciones a realizar: </span>
+                                    <t t-foreach="o.select_3_2" t-as="l">                                
+                                        <li><span t-field="l.name" /></li>
+                                    </t> 
+                                    
+                                    <span t-field="o.select_3_5" />
                                     <span t-field="o.select_3_6" />
 
                                 </td>
@@ -456,56 +487,105 @@
                             <tr><td><strong>4.1	Vista general de botella.</strong></td></tr>
                             <tr>
                                 <td>
-                                    <img t-if="o.img_botella" t-att-src="'data:image/png;base64,%s' % to_text(o.img_botella)" style="max-height: 150px;max-width: 150px;"/>
+                                    <img t-if="o.img_botella" t-att-src="'data:image/png;base64,%s' % to_text(o.img_botella)" width="100px" height="300"/>
                                 </td>
                                 <td>
-                                    <span>	Botella del componente se presenta  </span><span t-field="o.select_4_1" /><br></br>
-                                    <span>Entradas de aceite se encuentran  </span><span t-field="o.select_4_2"/><br></br>
-                                    <span>Acciones a realizar : </span><span t-field="o.select_4_3" />
+                                    <span>4.1 Botella del componente se presenta  </span>
+                                    <t t-foreach="o.select_4_1" t-as="l">                                
+                                        <li><span t-field="l.name" /></li>
+                                    </t> 
+                                    <span>4.2 Condiciones de Entradas de aceite se encuentran con: </span>
+                                    <t t-foreach="o.select_4_2" t-as="l">                                
+                                        <li><span t-field="l.name" /></li>
+                                    </t> 
+
+                                    <span>4.3 Acciones a realizar : </span>
+                                    <t t-foreach="o.select_4_3" t-as="l">                                
+                                        <li><span t-field="l.name" /></li>
+                                    </t> 
 
                                 </td>
                             </tr>                            
                             <tr><td><strong>4.2	Zoom interior de botella.</strong></td></tr>
                             <tr>
                                 <td>
-                                    <img t-if="o.img_interior_botella" t-att-src="'data:image/png;base64,%s' % to_text(o.img_interior_botella)" style="max-height: 150px;max-width: 150px;"/>
+                                    <img t-if="o.img_interior_botella" t-att-src="'data:image/png;base64,%s' % to_text(o.img_interior_botella)" width="100px" height="300"/>
                                 </td>
                                 <td>
-                                    <span>Interior de botella se presenta </span><span t-field="o.select_4_4"/>
-                                    <span> producto del trabajo y que no afectan su óptimo funcionamiento  </span>
+                                    <span>4.3 Interior de botella se presenta con: </span>
+                                    <t t-foreach="o.select_4_4" t-as="l">                                
+                                        <li><span t-field="l.name" /></li>
+                                    </t> 
+                                    <span> producto del trabajo y que </span><span t-field="o.select_4_4_B" />
                                 </td>
                             </tr>
                             <tr><td><strong>5.Anclaje de botella </strong></td></tr>
                             <tr>
                                 <td>
-                                    <img t-if="o.img_anclaje_botella" t-att-src="'data:image/png;base64,%s' % to_text(o.img_anclaje_botella)" style="max-height: 150px;max-width: 150px;"/>
+                                    <img t-if="o.img_anclaje_botella" t-att-src="'data:image/png;base64,%s' % to_text(o.img_anclaje_botella)" width="100px" height="300"/>
                                 </td>
                                 <td>
-                                    <span t-field="o.select_5_3"/><span> del anclaje se encuentra </span><span t-field="o.select_5_4"/><br></br>
-                                    <span>Acciones a realizar: </span><span t-field="o.select_5_2"/>;<span t-field="o.select_5_5"/>,
-                                    <span t-field="o.select_5_6"/>
+                                    <span>5.1 Anclaje del vástago se encuentra: </span>
+                                    <t t-foreach="o.select_5_1" t-as="l">                                
+                                        <li><span t-field="l.name" /></li>
+                                    </t>                                     
+                                    <span>5.2 Acciones a realizar: </span>
+                                    <t t-foreach="o.select_5_2" t-as="l">                                
+                                        <li><span t-field="l.name" /></li>
+                                    </t>                                     
+                                    <!--5.3-->
+                                    <span t-field="o.select_5_3" />
+                                    <!--5.4-->
+                                    <t t-foreach="o.select_5_4" t-as="l">                                
+                                        <li><span t-field="l.name" /></li>
+                                    </t>                                     
+                                    <span>5.5 Acción a realizar con buje o rotula: </span>
+                                        <li><span t-field="o.select_5_5" /></li>
+                                    <span>5.6 Material de Buje: </span>
+                                    <span t-field="o.select_5_6" /><br></br>
+                                    <span>Resumen: </span>
+                                    <t t-foreach="o.select_5_2" t-as="l">                                
+                                        <li><span t-field="l.name" /></li>
+                                    </t>                                     
+                                    <li><span t-field="o.select_5_5" /></li>
+                                    <li><span t-field="o.select_5_6" /></li><br></br>
+
                                 </td>
                             </tr>                            
-                            <tr><td><strong>6.	Vista general tapa prensa.</strong></td></tr>
+                            <tr><td><strong>6. Vista general tapa prensa.</strong></td></tr>
                             <tr>
                                 <td>
-                                    <img t-if="o.img_tapa_prensa" t-att-src="'data:image/png;base64,%s' % to_text(o.img_tapa_prensa)" style="max-height: 150px;max-width: 150px;"/>
+                                    <img t-if="o.img_tapa_prensa" t-att-src="'data:image/png;base64,%s' % to_text(o.img_tapa_prensa)" width="100px" height="300"/>
                                 </td>
                                 <td>
-                                    <span>Prensa del componente se presenta con/sin daños </span><span t-field="o.select_6_1"/><br></br>
-                                    <span>Sellos se encuentran desgastados y deteriorados, por uso. </span><br></br>
-                                    <span>Acciones a realizar: </span><span t-field="o.select_6_2"/>
+                                    <span>6.1 Prensa del componente se presenta: </span>
+                                    <t t-foreach="o.select_6_1" t-as="l">                                
+                                        <li><span t-field="l.name" /></li>
+                                    </t>  
+                                    <span>6.2 Acciones a realizar: </span>
+                                    <t t-foreach="o.select_6_2" t-as="l">                                
+                                        <li><span t-field="l.name" /></li>
+                                    </t>  
+                                    <!--6.3-->
+                                    <span t-field="o.select_6_3"/>
                                 </td>
                             </tr>                            
                             <tr><td><strong>7.	Vista general pistón.</strong></td></tr>
                             <tr>
                                 <td>
-                                    <img t-if="o.img_piston" t-att-src="'data:image/png;base64,%s' % to_text(o.img_piston)" style="max-height: 150px;max-width: 150px;"/>
+                                    <img t-if="o.img_piston" t-att-src="'data:image/png;base64,%s' % to_text(o.img_piston)" width="100px" height="300"/>
                                 </td>
                                 <td>
-                                    <span>Pistón del componente se presenta con/sin daños </span><span t-field="o.select_7_1"/><br></br>
-                                    <span>	Sellos se encuentran desgastados y deteriorados, por uso.</span><br></br>
-                                    <span>Acciones a realizar: </span><span t-field="o.select_7_2"/>
+                                    <span>7.1 Pistón del componente se presenta: </span>
+                                    <t t-foreach="o.select_7_1" t-as="l">                                
+                                        <li><span t-field="l.name" /></li>
+                                    </t>  
+                                    <span>7.2 Acciones a realizar: </span>
+                                    <t t-foreach="o.select_7_2" t-as="l">                                
+                                        <li><span t-field="l.name" /></li>
+                                    </t>  
+                                    <!--7.3-->
+                                    <span t-field="o.select_7_3"/>
                                 </td>
                             </tr>                            
 
@@ -518,11 +598,31 @@
                         <h3>Acciones a realizar:</h3>                        
                         <ol>
                             
-                            <li><span>Vastago </span><span t-field="o.select_2_2"/></li>
-                            <li><span>Botella </span><span t-field="o.select_4_3"/></li>
-                            <li><span>Anclajes </span><span t-field="o.select_3_2"/>;<span t-field="o.select_5_2"/></li>
-                            <li><span>Prensa </span><span t-field="o.select_6_2"/></li>
-                            <li><span>Pistón </span><span t-field="o.select_7_2"/></li>
+                            <strong><span>Vastago: </span></strong>
+                            <t t-foreach="o.select_2_2" t-as="l">                                
+                                <li><span t-field="l.name" /></li>
+                            </t>                            
+                            <strong><span>Botella: </span></strong>
+                            <t t-foreach="o.select_4_3" t-as="l">                                
+                                <li><span t-field="l.name" /></li>
+                            </t>                                                        
+                            <strong><span>Anclajes: </span></strong>
+                            <t t-foreach="o.select_3_2" t-as="l">                                
+                                <li><span t-field="l.name" /></li>
+                            </t>                                                        
+                            <t t-foreach="o.select_5_2" t-as="l">                                
+                                <li><span t-field="l.name" /></li>
+                            </t>                                                        
+                            <li><span t-field="o.select_3_6" /></li>
+
+                            <strong><span>Prensa </span></strong>
+                            <t t-foreach="o.select_6_2" t-as="l">                                
+                                <li><span t-field="l.name" /></li>
+                            </t>                                                                                    
+                            <strong><span>Pistón </span></strong>
+                            <t t-foreach="o.select_7_2" t-as="l">                                
+                                <li><span t-field="l.name" /></li>
+                            </t>                                                                                    
                             <li><span>Instalar nuevos sellos</span></li>
                             <li><span>Armar componente</span></li>
                             <li><span>Realizar prueba de estanqueidad</span></li>

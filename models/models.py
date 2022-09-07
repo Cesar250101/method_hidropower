@@ -141,13 +141,126 @@ class InformeSalida(models.Model):
 
 
     
+class EstadoVastago(models.Model):
+    _name = 'method_hidropower.estado_vastago'
+    _description = 'Estado del vastago'
 
+    name = fields.Char('Nombre Estado')
+    informe_entrada_id = fields.Many2one('method_hidropower.informe_entrada', string='Informe de Entrada')
+    es_otros = fields.Boolean(string='Es Otros', help='Indica si el estado corresponde al concepto de OTROS, si es así se activa una cuadro de texto')
+
+class AccionVastago(models.Model):
+    _name = 'method_hidropower.accion_vastago'
+    _description = 'Acciones a realizar'
+
+    name = fields.Char('Nombre Acción')
+    informe_entrada_id = fields.Many2one('method_hidropower.informe_entrada', string='Informe de Entrada')
+
+class CondicionAnclaje(models.Model):
+    _name = 'method_hidropower.condicion_anclaje'
+    _description = 'Condición del anclaje'
+
+    name = fields.Char('Nombre Condicion Anclaje')
+    informe_entrada_id = fields.Many2one('method_hidropower.informe_entrada', string='Informe de Entrada')
     
+class CondicionAnclaje(models.Model):
+    _name = 'method_hidropower.accion_anclaje'
+    _description = 'Acción del anclaje'
+
+    name = fields.Char('Nombre Acción Anclaje')
+    informe_entrada_id = fields.Many2one('method_hidropower.informe_entrada', string='Informe de Entrada')
+
+class EstadoBujeRotula(models.Model):
+    _name = 'method_hidropower.estado_buje_rotula'
+    _description = 'Estado Buje/Rotula'
+
+    name = fields.Char('Nombre Estado Buje/Rotula')
+    informe_entrada_id = fields.Many2one('method_hidropower.informe_entrada', string='Informe de Entrada')
+
+class EstadoBotella(models.Model):
+    _name = 'method_hidropower.estado_botella'
+    _description = 'Estado Botella'
+
+    name = fields.Char('Estado Botella')
+    informe_entrada_id = fields.Many2one('method_hidropower.informe_entrada', string='Informe de Entrada')
+
+class EstadoEntradaAceite(models.Model):
+    _name = 'method_hidropower.estado_entrada_aceite'
+    _description = 'Condición de entrada de aceite'
+
+    name = fields.Char('Estado Entrada Aceite')
+    informe_entrada_id = fields.Many2one('method_hidropower.informe_entrada', string='Informe de Entrada')
+
+class AccionBotella(models.Model):
+    _name = 'method_hidropower.accion_botella'
+    _description = 'Acción a realizar Botella'
+
+    name = fields.Char('Acción Botella')
+    informe_entrada_id = fields.Many2one('method_hidropower.informe_entrada', string='Informe de Entrada')
+
+
+class CondicionesInteriorBotella(models.Model):
+    _name = 'method_hidropower.condiciones_interior_botella'
+    _description = 'Condiciones interior botella'
+
+    name = fields.Char('Condiciones interior botella')
+    informe_entrada_id = fields.Many2one('method_hidropower.informe_entrada', string='Informe de Entrada')
+
+
+class EstadoAnclajeBotella(models.Model):
+    _name = 'method_hidropower.estado_anclaje_botella'
+    _description = 'Estado anclaje de botella'
+
+    name = fields.Char('Estado Anclaje botella')
+    informe_entrada_id = fields.Many2one('method_hidropower.informe_entrada', string='Informe de Entrada')
+
+class AcciónRealizarAnclajeBotella(models.Model):
+    _name = 'method_hidropower.accion_anclaje_botella'
+    _description = 'Acción a realizar anclaje de botella'
+
+    name = fields.Char('Acción Realizar Anclaje botella')
+    informe_entrada_id = fields.Many2one('method_hidropower.informe_entrada', string='Informe de Entrada')
+
+class EstadoBujeRotula(models.Model):
+    _name = 'method_hidropower.estado_buje_rotula'
+    _description = 'Estado Buje/Rotula'
+
+    name = fields.Char('Estado Buje/Rotula')
+    informe_entrada_id = fields.Many2one('method_hidropower.informe_entrada', string='Informe de Entrada')
+
+class CondicionPrensa(models.Model):
+    _name = 'method_hidropower.condicion_prensa'
+    _description = 'Condición de prensa'
+
+    name = fields.Char('Condición Prensa')
+    informe_entrada_id = fields.Many2one('method_hidropower.informe_entrada', string='Informe de Entrada')
+
+class CondicionPrensa(models.Model):
+    _name = 'method_hidropower.accion_prensa'
+    _description = 'Acción a realizar prensa'
+
+    name = fields.Char('Acción Realizar Prensa')
+    informe_entrada_id = fields.Many2one('method_hidropower.informe_entrada', string='Informe de Entrada')
+
+class CondicionPiston(models.Model):
+    _name = 'method_hidropower.condicion_piston'
+    _description = 'Condición de pistón'
+
+    name = fields.Char('Condición pistón')
+    informe_entrada_id = fields.Many2one('method_hidropower.informe_entrada', string='Informe de Entrada')
+
+class AccionPiston(models.Model):
+    _name = 'method_hidropower.accion_piston'
+    _description = 'Acción a realizar pistón'
+
+    name = fields.Char('Acción pistón')
+    informe_entrada_id = fields.Many2one('method_hidropower.informe_entrada', string='Informe de Entrada')
 
 
 class InformeEntrada(models.Model):
     _name = 'method_hidropower.informe_entrada'
     _description = 'Informe de entrada'
+    _inherit = ['mail.thread','mail.activity.mixin']
 
     name = fields.Char(string='Nombre Informe')    
     repair_order_id = fields.Many2one(comodel_name='repair.order', string='Orden de Reparación')    
@@ -157,65 +270,29 @@ class InformeEntrada(models.Model):
     img_cilindro_completo = fields.Binary('Cilindro Completo')
     img_desarme = fields.Binary('Imagen Desarme')
     txt_desarme = fields.Text(string='Texto Desarme')
-    img_vastago = fields.Binary('Imagen Vástago')
-    select_2_1 = fields.Selection(string='Vastago', 
-                                    selection=[('bueno', 'En buenas condiciones'), 
-                                    ('piting', 'Con Piting en su manto de cromo'),
-                                    ('golpe', 'Con Golpe en manto de cromo'),
-                                    ('flexion', 'con Flexion'),
-                                    ('despendimiento', 'Con Des´rendimiento de cromo'),
-                                    ('oxido', 'Con Oxido'),
-                                    ('quebrado', 'Quebrado'),
-                                    ('fisurado', 'Fisurado'),
-                                    ('fisura_soldaura', 'Fisura en soldadura'),
-                                    ('arrastre', 'Con arrastre de material'),
-                                    ('puño', 'Puño cortado'),
-                                    ('hilo', 'Daño en hilo de spiga'),
-                                    ])
-    select_2_2 = fields.Selection(string='Acción', 
-                                            selection=[('pilido', 'Pulido de vastago'), 
-                                            ('fabricacion', 'Fabricación de vastago'),
-                                            ('descromado', 'Descromado y cromado'),
-                                            ('recuperacion', 'Recuperación puntual'),
-                                            ('hvof', 'Hvof'),
-                                            ])
+    img_vastago_1 = fields.Binary('Imagen Vástago 1')
+    img_vastago_2 = fields.Binary('Imagen Vástago 2')
+    img_vastago_3 = fields.Binary('Imagen Vástago 3')
+    select_2_1 = fields.One2many('method_hidropower.estado_vastago', 'informe_entrada_id', string='Estado Vastago')
+    select_2_1_es_otro = fields.Boolean(string='Otro?')
+    select_2_1_otros = fields.Char('Especificar')
+    select_2_2 = fields.One2many('method_hidropower.accion_vastago','informe_entrada_id' ,string='Acciones Vastago')
                                                                 
     img_vastago_daño = fields.Binary('Daño Vástago')
     txt_vastago_daño = fields.Text(string='Daño de vástago')
     img_anclaje_vastago = fields.Binary('Anclaje Vástago')
-    select_3_1 = fields.Selection(string='Condición del Anclaje', 
-                                            selection=[('sin_puño', 'Sin puño'), 
-                                            ('buena', 'En buenas condiciones'),
-                                            ('deformado', 'Con el puño deformado por daño'),
-                                            ('quebrado', 'Con el puño quebrado'),
-                                            ('fuera_medida', 'Con alojamiento de puño fuera de medida'),
-                                            ('fuera_medida', 'Con alojamiento de puño fuera de medida'),
-                                            ('arrastre', 'Con alojamiento con arrastre'),
-                                            ])
+    
+    select_3_1 = fields.One2many('method_hidropower.condicion_anclaje', 'informe_entrada_id', string='Estado Anclaje')
+    select_3_2 = fields.One2many('method_hidropower.accion_anclaje', 'informe_entrada_id', string='Acción Anclaje')
+    
     select_3_3= fields.Selection(string='Buje/Rotula', 
-                                            selection=[('buje', 'Buje'), 
-                                            ('rotula', 'Rotula'),
-                                            ('deformado', 'No trae rotula/buje'),
+                                            selection=[('buje', 'El Anclaje del vástago viene con buje'), 
+                                            ('rotula', 'El Anclaje del vástago viene con rotula'),
+                                            ('buje_rotula', 'El Anclaje del vástago viene sin buje/rotula'),
                                             ('nada', 'N/A'),
                                             ])
-    select_3_2 = fields.Selection(string='Acción Realizar', 
-                                            selection=[('sin', 'Sin intervención'), 
-                                            ('fabricar', 'Fabricar puño'),
-                                            ('recuperar', 'Recuperación de puño diametro exterior'),
-                                            ('recuperar_interior', 'Recuperación de diametro interior'),
-                                            ('cambio', 'Cambio de rotula/buje'),
-                                            ('pulido', 'Pulido de alojamiento'),
-                                            ])
-    select_3_4 = fields.Selection(string='Estado Buje/Rotula', 
-                                            selection=[('fuera_medida_interior', 'Buje con diametro interior fuera de medida'), 
-                                            ('fuera_medida_exterior', 'Buje con diametro exterior fuera de medida'),
-                                            ('buje_arrastre_material', 'Buje presenta arrastre de material'),
-                                            ('buje_quebrado', 'Buje Quebrado'),
-                                            ('buje_fisura', 'Buje presenta fisura'),
-                                            ('juego_axial', 'Rotula con juego axial'),
-                                            ('juego_radial', 'Rotula con juego radial'),
-                                            ('quebrada', 'Rotula Quebrada'),
-                                            ])
+    select_3_4 = fields.One2many('method_hidropower.estado_buje_rotula', 'informe_entrada_id', string='Estado Buje/Rotula')
+                                            
     select_3_5 = fields.Selection(string='Acción a realizar Buje/Rotula', 
                                             selection=[('sin', 'Sin intervención'), 
                                             ('fabricar', 'Fabricar buje(+B2)'),
@@ -229,70 +306,26 @@ class InformeEntrada(models.Model):
                                             ('technill', 'Technill'),
                                             ])
     img_botella = fields.Binary('Vista general botella')                                            
-    select_4_1 = fields.Selection(string='Exterior Botella', 
-                                            selection=[('bueno', 'Buenas condiciones'), 
-                                            ('flextado', 'Flectado'),
-                                            ('daño', 'Con daño/golpes en el exterior de botella'),
-                                            ('fisura', 'Fisura en soldadura'),
-                                            ('hilo', 'Daños en hilo de prensa'),
-                                            ('cañeria', 'Daños en amarre de soporte de cañeria'),
-                                            ])
-    select_4_2 = fields.Selection(string='Condición de entrada de aceite', 
-                                            selection=[('golpe_externo', 'Golpe Externo'), 
-                                            ('deformacion', 'Deformación de Niples'),
-                                            ('mal_estado', 'Hllos en mal estado'),
-                                            ('sin_niples', 'Sin Niples'),
-                                            ('fisura', 'Fisura en saldadura'),
-                                            ])
-    select_4_3 = fields.Selection(string='Acción a realizar Botella', 
-                                            selection=[('bruñido', 'Bruñido de botella'), 
-                                            ('fabricacion', 'Fabricación de botella'),
-                                            ('recuperacion_e', 'Recuperación externa'),
-                                            ('recuperacion_sb', 'Recuperación de soldadura de botella'),
-                                            ('fabricar_amarres', 'Fabricar amarres de soporte'),
-                                            ('cambio_niples', 'Cambio de niples'),
-                                            ('recuperar_fisura_soldadura', 'Recuperación fisura de soldadura de niples'),
-                                            ])
+    select_4_1 = fields.One2many('method_hidropower.estado_botella', 'informe_entrada_id', string='Estado Botella')
+    select_4_2 = fields.One2many('method_hidropower.estado_entrada_aceite', 'informe_entrada_id', string='Estado Entrada Aceite')
+                                            
+    select_4_3 = fields.One2many('method_hidropower.accion_botella', 'informe_entrada_id', string='Acción Realizar Botella')
     img_interior_botella = fields.Binary('Zoom interior de botella')                                            
-    select_4_4 = fields.Selection(string='Condiciones interior botella', 
-                                            selection=[('buena', 'En buenas condiciones'), 
-                                            ('arrastre_material', 'Con arrastre de material en su interior'),
-                                            ('golpes_internos', 'Con golpes internos'),
-                                            ('fuera_medida', 'Fuera de medida en el diametro interior'),
-                                            ('cavitacion', 'cavitación (corroción) en su diametro interior'),
+    select_4_4 = fields.One2many('method_hidropower.condiciones_interior_botella', 'informe_entrada_id', string='Condición Interior Botella')
+    select_4_4_B = fields.Selection(string='Condición Interior Botella B', 
+                                            selection=[('no_afecta', 'no afectan su optimo funcionamiento'), 
+                                            ('afecta', ' afectan su optimo funcionamiento'),
                                             ])
-    img_anclaje_botella = fields.Binary('Anclaje de botella')                                            
-    select_5_1 = fields.Selection(string='Estado anclaje de botella', 
-                                            selection=[('sin_puño', 'Sin puño'), 
-                                            ('buena', 'En buenas condiciones'),
-                                            ('puño_quebrado', 'Con el puño quebrado'),
-                                            ('fuera_medida', 'Con alojamiento de puño fuera de medida'),
-                                            ('alojamiento_arrastre', 'Con alojamiento con arrastre'),
-                                            ])
-    select_5_2 = fields.Selection(string='Acción a realizar anclaje de botella', 
-                                            selection=[('sin_intervencion', 'Sin intervención'), 
-                                            ('fabricar', 'Fabricar puño'),
-                                            ('recuperacion_puño', 'Recuperación de puño diametro exterior'),
-                                            ('recuperacion_diametro', 'Recuperación de diametro interior'),
-                                            ('cambio_rotula', 'Cambio de rotula/buje'),
-                                            ('pulido_alojamento', 'Pulido de Alojamiento'),
-                                            ])
+    img_anclaje_botella = fields.Binary('Anclaje de botella')                                                
+    select_5_1 = fields.One2many('method_hidropower.estado_anclaje_botella', 'informe_entrada_id', string='Estado Anclaje Botella')
+    select_5_2 = fields.One2many('method_hidropower.accion_anclaje_botella', 'informe_entrada_id', string='Acción Anclaje Botella')
     select_5_3 = fields.Selection(string='Buje/Rotula', 
-                                            selection=[('buje', 'Buje'), 
-                                            ('rotula', 'Rotula'),
-                                            ('no_trae', 'No trae rotula/buje'),
+                                            selection=[('buje', 'El Anclaje del vástago viene con buje'), 
+                                            ('rotula', 'El Anclaje del vástago viene con rotula'),
+                                            ('no_trae', 'El Anclaje del vástago viene sin buje/rotula'),
                                             ('na', 'N/A'),
-                                            ])
-    select_5_4 = fields.Selection(string='Estado Buje/Rotula', 
-                                            selection=[('buje_fuera_medida', 'Buje con diametro interior fuera de medida'), 
-                                            ('buje_diametro_fuera_medida', 'Buje con diametro exterior fuera de medida'),
-                                            ('arrastre_metrial', 'Buje presenta arrastre de material'),
-                                            ('buje_quebrado', 'Buje quebrado'),
-                                            ('fisura', 'Buje presenta fisura'),
-                                            ('juego_axial', 'Rotula con juego axial'),
-                                            ('juego_radial', 'Rotula con juego radial'),
-                                            ('quebrada', 'Rotula quebrada'),
-                                            ])
+                                            ])                                            
+    select_5_4 = fields.One2many('method_hidropower.estado_buje_rotula', 'informe_entrada_id', string='Acción Anclaje Botella')
     select_5_5 = fields.Selection(string='Acción a realizar con buje/rotula', 
                                             selection=[('sin_intervencion', 'Sin intervención'), 
                                             ('fabricar', 'Fabricar buje (+B2)'),
@@ -306,43 +339,54 @@ class InformeEntrada(models.Model):
                                             ('technill', 'Technill'),
                                             ])
     img_tapa_prensa = fields.Binary('Vista general tapa prensa')                                            
-    select_6_1 = fields.Selection(string='Condición de prensa', 
-                                            selection=[('buena', 'Buenas condiciones'), 
-                                            ('fuera_medida_interior', 'Fuera de medida en el diametro interior'),
-                                            ('fuera_medida_exterior', 'Fuera de medida en el diametro exterior'),
-                                            ('golpe', 'Presenta Golpe/Arrastre de meterial'),
-                                            ('sellos', 'Canal de sellos fuera de medida'),
-                                            ('hilo', 'Hilos con daños'),
-                                            ('fisura', 'Presenta fisura'),
-                                            ])
-    select_6_2 = fields.Selection(string='Acción a realizar prensa', 
-                                            selection=[('pulido', 'Pulido'), 
-                                            ('fabricacion', 'Fabricación'),
-                                            ('recuperacion_medida_interior', 'Recuperación de medidas interior'),
-                                            ('recuperacion_medida_exterior', 'Recuperación de medidas exterior'),
-                                            ('recuperacion_sellos', 'Recueración de canal de sellos'),
-                                            ('recuperacion_hilo', 'Recuperación de hilo'),
-                                            ])
+    select_6_1 = fields.One2many('method_hidropower.condicion_prensa', 'informe_entrada_id', string='Condición Prensa')
+    select_6_2 = fields.One2many('method_hidropower.accion_prensa', 'informe_entrada_id', string='Acción Prensa')
+    select_6_3 = fields.Text('6.3 Texto fijo')
     img_piston = fields.Binary('Vista general pistón') 
-    select_7_1 = fields.Selection(string='Condición de pistón', 
-                                            selection=[('buena', 'Buenas condiciones'), 
-                                            ('fuera_medida_di', 'Fuera de medida en el diametro interior'),
-                                            ('fuera_medida_de', 'Fuera de medida en el diametro exterior'),
-                                            ('recuperacion_medida_exterior', 'Presenta golpes/arrastre de material'),
-                                            ('sello_fuera_medida', 'Canal de sellos fuera de medida'),
-                                            ('hilo_daño', 'Hilo con daños'),
-                                            ('fisura', 'Presenta fisura'),
-                                            ])    
-    select_7_2 = fields.Selection(string='Acción a realizar pistón', 
-                                            selection=[('pulido', 'Pulido'), 
-                                            ('fabricacion', 'Fabricación'),
-                                            ('recuperacion_interior', 'Recuperación de medidas interior'),
-                                            ('recuperacion_exterior', 'Recuperación de medidas exterior'),
-                                            ('recuperacion_sellos', 'Recuperación de canal de sellos'),
-                                            ('recuperacion_hilo', 'Recuperación de hilo'),
-                                            ])    
+    
+    select_7_1 = fields.One2many('method_hidropower.condicion_piston', 'informe_entrada_id', string='Condición Pistón')    
+    select_7_2 = fields.One2many('method_hidropower.accion_piston', 'informe_entrada_id', string='Condición Pistón')
+    select_7_3 = fields.Text('7.3 Texto fijo')
+
     observaciones = fields.Text(string='Observaciones')
+    vastago_exterior = fields.Float('Ø Exterior')
+    vastago_longitud_cromo = fields.Float('Longitud de cromo')
+    vastago_longitud_centro = fields.Float('Longitud de centro')
+    vastago_longitud_total = fields.Float('Longitud total')
+    vastago_flexion = fields.Float('Flexión')
+    vastago_tipo_cromo = fields.Float('Tipo de cromo')
                                                 
+    botella_exterior = fields.Float('Ø Exterior')
+    botella_interior = fields.Float('Ø Interior')   
+    botella_longitud_interior = fields.Float('Longitud interior')
+    botella_longitud_centro = fields.Float('Longitud de centro')
+    botella_longitud_total = fields.Float('Longitud total')
+    botella_ovalación = fields.Float('Ovalación')
+
+    piston_exterior= fields.Float('Ø Exterior')
+    piston_interior= fields.Float('Ø Interior')
+    piston_ancho= fields.Float('Ancho')
+    piston_material= fields.Float('Material')
+
+    prensa_exterior= fields.Float('Ø Exterior')
+    prensa_interior= fields.Float('Ø Interior')
+    prensa_ancho= fields.Float('Ancho')
+    prensa_material= fields.Float('Material')
+
+    anclaje_vastago_exterior= fields.Float('Ø Exterior (buje/rotula')
+    anclaje_vastago_interior= fields.Float('Ø Interior (buje/rotula')
+    anclaje_vastago_ancho= fields.Float('Ancho')
+    anclaje_vastago_material= fields.Float('Material')
+
+    anclaje_botella_exterior= fields.Float('Ø Exterior (buje/rotula')
+    anclaje_botella_interior= fields.Float('Ø Interior (buje/rotula')
+    anclaje_botella_ancho= fields.Float('Ancho')
+    anclaje_botella_material= fields.Float('Material')
+
+    
+
+
+
 
                                         
 

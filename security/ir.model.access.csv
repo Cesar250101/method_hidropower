@@ -1,3 +1,22 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 informe_entrada,Informe Entrada,method_hidropower.model_method_hidropower_informe_entrada,stock.group_stock_user,1,1,1,1
 informe_salida,Informe Salida,method_hidropower.model_method_hidropower_informe_salida,stock.group_stock_user,1,1,1,1
+estados_vastago,Estados Vastago,method_hidropower.model_method_hidropower_estado_vastago,stock.group_stock_user,1,1,1,1
+acciones_vastago,Acciones Vastago,method_hidropower.model_method_hidropower_accion_vastago,stock.group_stock_user,1,1,1,1
+condicion_anclaje,Condición Anclaje,method_hidropower.model_method_hidropower_condicion_anclaje,stock.group_stock_user,1,1,1,1
+accion_anclaje,Acción Anclaje,method_hidropower.model_method_hidropower_accion_anclaje,stock.group_stock_user,1,1,1,1
+estado_buje_rotula,Estado Buje/Rotula,method_hidropower.model_method_hidropower_estado_buje_rotula,stock.group_stock_user,1,1,1,1
+estado_botella,Estado Botella,method_hidropower.model_method_hidropower_estado_botella,stock.group_stock_user,1,1,1,1
+estado_entrada_aceite,Estado Entrada Aceite,method_hidropower.model_method_hidropower_estado_entrada_aceite,stock.group_stock_user,1,1,1,1
+accion_botella,Acción Botella,method_hidropower.model_method_hidropower_accion_botella,stock.group_stock_user,1,1,1,1
+condicion_interior_botella,Condición Interior Botella,method_hidropower.model_method_hidropower_condiciones_interior_botella,stock.group_stock_user,1,1,1,1
+estado_anclaje,Condición Interior Botella,method_hidropower.model_method_hidropower_estado_anclaje_botella,stock.group_stock_user,1,1,1,1
+accion_anclaje_botella ,Acción Anclaje Botella,method_hidropower.model_method_hidropower_accion_anclaje_botella,stock.group_stock_user,1,1,1,1
+estado_buje_rotula,Estado Buje Rotula,method_hidropower.model_method_hidropower_estado_buje_rotula,stock.group_stock_user,1,1,1,1
+condicion_prensa,Condición Prensa,method_hidropower.model_method_hidropower_condicion_prensa,stock.group_stock_user,1,1,1,1
+accion_prensa,Acción Prensa,method_hidropower.model_method_hidropower_accion_prensa,stock.group_stock_user,1,1,1,1
+condicion_piston,Condición Pistón,method_hidropower.model_method_hidropower_condicion_piston,stock.group_stock_user,1,1,1,1
+accion_piston,Acción Pistón,method_hidropower.model_method_hidropower_accion_piston,stock.group_stock_user,1,1,1,1
+
+
+

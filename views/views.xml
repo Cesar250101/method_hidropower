@@ -183,8 +183,6 @@
               <button name="obtiene_odenes" string="Obtener Ordenes" type="object" class="oe_highlight" sequence="3"/>  -->
         </header>      
         <sheet>
-            <group name="entrada" string="Informe de Entrada">
-              <group>
                 <group name="partner" string="Cliente">
                   <field name="name" />
                   <field name="partner_id" />
@@ -194,65 +192,144 @@
                   <field name="img_cilindro_completo"/>                                  
                 </group>
                 <!-- <field name="img_cilindro_completo" widget="image" class="oe_avatar" />                 -->
+                <notebook>
+                  <page string="Medidas Cilindro" name="medidas_cilindro">
+                    <group>
+                      <group name="vastago" string="Vastago">
+                        <field name="vastago_exterior"/>
+                        <field name="vastago_longitud_cromo"/>   
+                        <field name="vastago_longitud_centro"/>   
+                        <field name="vastago_longitud_total"/>   
+                        <field name="vastago_flexion"/>   
+                        <field name="vastago_tipo_cromo"/>   
+                      </group>
+                      <group name="botella" string="Botella">
+                        <field name="botella_exterior"/>
+                        <field name="botella_interior"/>   
+                        <field name="botella_longitud_interior"/>   
+                        <field name="botella_longitud_centro"/>   
+                        <field name="botella_longitud_total"/>   
+                        <field name="botella_ovalación"/>   
+                      </group>
+                      <group name="piton" string="Pistón">
+                        <field name="piston_exterior"/>
+                        <field name="piston_interior"/>   
+                        <field name="piston_ancho"/>   
+                        <field name="piston_material"/>   
+                      </group>
+                      <group name="prensa" string="Prensa">
+                        <field name="prensa_exterior"/>
+                        <field name="prensa_interior"/>   
+                        <field name="prensa_ancho"/>   
+                        <field name="prensa_material"/>   
+                      </group>
+                      <group name="anclaje_vastago" string="Anclaje Castago">
+                        <field name="anclaje_vastago_exterior"/>
+                        <field name="anclaje_vastago_interior"/>   
+                        <field name="anclaje_vastago_ancho"/>   
+                        <field name="anclaje_vastago_material"/>   
+                      </group>
+                      <group name="anclaje_botella" string="Anclaje Botella">
+                        <field name="anclaje_botella_exterior"/>
+                        <field name="anclaje_botella_interior"/>   
+                        <field name="anclaje_botella_ancho"/>   
+                        <field name="anclaje_botella_material"/>   
+                      </group>
+                      
+                    </group>
+                  </page>
 
-                <group name="desarme" string="Vista general del desarme">
-                  <field name="img_desarme"/>
-                  <field name="txt_desarme"/>                  
-                </group>
-                <group name="vastago" string="Vista general del vástago">
-                  <field name="img_vastago"/>
-                  <field name="select_2_1"/>
-                  <field name="select_2_2"/>                  
-                </group>
-                <group name="vastago_daño" string="Fotografía de daño de vástago">
-                  <field name="img_vastago_daño"/>
-                  <field name="txt_vastago_daño"/>                  
-                </group>
-                <group name="anclaje" string="Vista general de anclaje de vástago">
-                  <field name="img_anclaje_vastago"/>
-                  <field name="select_3_1"/>
-                  <field name="select_3_3"/>
-                  <field name="select_5_2"/>
-                  <field name="select_3_4"/>
-                  <field name="select_3_5"/>
-                  <field name="select_3_6"/>                  
-                </group>
-                <group name="botella" string="Vista general de botella">
-                  <field name="img_botella"/>
-                  <field name="select_4_1"/>
-                  <field name="select_4_2"/>
-                  <field name="select_4_3"/>                  
-                </group>
-                <group name="zoom_botella" string="Zoom interior de botella">
-                  <field name="img_interior_botella"/>
-                  <field name="select_4_4"/>                  
-                </group>
-                <group name="anclaje_botella" string="Anclaje de botella">
-                  <field name="img_anclaje_botella"/>
-                  <field name="select_5_1"/>
-                  <field name="select_5_2"/>
-                  <field name="select_5_3"/>
-                  <field name="select_5_4"/>
-                  <field name="select_5_5"/>
-                  <field name="select_5_6"/>                  
-                </group>
-                <group name="prensa" string="Vista general tapa prensa">
-                  <field name="img_tapa_prensa"/>
-                  <field name="select_6_1"/>
-                  <field name="select_6_2"/>                  
-                </group>
-                <group name="piston" string="Vista general pistón">
-                  <field name="img_piston"/>
-                  <field name="select_7_1"/>
-                  <field name="select_7_2"/>                  
-                </group>
-                <group name="obs" string="Observaciones">
-                  <field name="observaciones"/>  
-                </group>
+                  <page string="Vista general del desarme" name="vista_general_desarme">
+                    <group name="desarme" string="Vista general del desarme">
+                      <field name="img_desarme"/>
+                      <field name="txt_desarme"/>                  
+                    </group>
+                  </page>
+                  <page string="Vista general del vástago" name="vista_general_vastago">                  
+                    <group name="vastago" string="Vista general del vástago">
+                      <field name="img_vastago_1"/>
+                      <field name="img_vastago_2"/>
+                      <field name="img_vastago_3"/>
+                      <field name="select_2_1" widget="many2many_tags"/>
+                      <field name="select_2_1_es_otro" widget="checkbox"/>
+                      <field name="select_2_1_otros" attrs="{'invisible':[('select_2_1_es_otro', '=', False)]}"/>
+                      <field name="select_2_2" widget="many2many_tags"/>
+                    </group>
+                  </page>                  
+                  <page string="Fotografía de daño de vástago" name="fotografía_daño_vastago">                                    
+                    <group name="vastago_daño" string="Fotografía de daño de vástago">
+                      <field name="img_vastago_daño"/>
+                      <field name="txt_vastago_daño"/>                  
+                    </group>
+                  </page>                                      
+                  <page string="Vista general de anclaje de vástago" name="vista_general_anclaje_vastago">                                                      
+                    <group name="anclaje" string="Vista general de anclaje de vástago">
+                      <field name="img_anclaje_vastago"/>
+                      <field name="select_3_1" widget="many2many_tags"/>
+                      <field name="select_3_2" widget="many2many_tags"/>
+                      <field name="select_3_3"/>
+                      <field name="select_3_4" widget="many2many_tags"/>
+                      <field name="select_3_5"/>
+                      <field name="select_3_6"/>                  
+                    </group>
+                  </page>                                                          
+                  <page string="Vista general de botella" name="vista_general_botella">                                                                        
+                    <group name="botella" string="Vista general de botella">
+                      <field name="img_botella"/>
+                      <field name="select_4_1" widget="many2many_tags"/>
+                      <field name="select_4_2" widget="many2many_tags"/>
+                      <field name="select_4_3" widget="many2many_tags"/>                  
+                    </group>
+                  </page>                                                                              
+                  <page string="Zoom interior de botella" name="zoom_interior_botella">                  
+                    <group name="zoom_botella" string="Zoom interior de botella">
+                      <field name="img_interior_botella"/>
+                      <field name="select_4_4" widget="many2many_tags"/>                  
+                      <field name="select_4_4_B"/>                  
+                    </group>
+                  </page>                                                                                
+                  <page string="Anclaje de botella" name="anclaje_botella">                                                      
+                    <group name="anclaje_botella" string="Anclaje de botella">
+                      <field name="img_anclaje_botella"/>
+                      <field name="select_5_1" widget="many2many_tags"/>
+                      <field name="select_5_2" widget="many2many_tags"/>
+                      <field name="select_5_3"/>
+                      <field name="select_5_4" widget="many2many_tags"/>
+                      <field name="select_5_5"/>
+                      <field name="select_5_6"/>                  
+                    </group>
+                  </page>                                                  
+                  <page string="Vista general tapa prensa" name="vista_general_tapa_prensa">                                                                    
+                    <group name="prensa" string="Vista general tapa prensa">
+                      <field name="img_tapa_prensa"/>
+                      <field name="select_6_1" widget="many2many_tags"/>
+                      <field name="select_6_2" widget="many2many_tags"/>                  
+                      <field name="select_6_3"/>
+                      
+                    </group>
+                  </page>                    
+                  <page string="Vista general pistón" name="vista_general_pistón">                                                                                      
+                    <group name="piston" string="Vista general pistón">
+                      <field name="img_piston"/>
+                      <field name="select_7_1" widget="many2many_tags"/>
+                      <field name="select_7_2" widget="many2many_tags"/>                  
+                      <field name="select_7_3"/>
+                      
+                    </group>
+                  </page>                  
+                  <page string="Observaciones" name="observaciones">                  
+                    <group name="obs" string="Observaciones">
+                      <field name="observaciones"/>  
+                    </group>
+                  </page>                  
+                </notebook>                  
                 
-              </group>
-            </group>
         </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>        
       </form>
       </field>
     </record>    
@@ -317,9 +394,37 @@
       </field>
     </record>
 
+    <!-- tree view Estados del Vástago-->
+    <record id="method_hidropower.estados_vasyagos_tree" model="ir.ui.view">
+      <field name="name">Estados del Vástago Tree</field>
+      <field name="model">method_hidropower.estado_vastago</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name" />
+        </tree>
+      </field>
+    </record> 
+
+    <!-- Estados del Vastago-->
+    <record id="method_hidropower.estado_vastago" model="ir.actions.act_window">
+      <field name="name">Estados del Vastago</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">method_hidropower.estado_vastago</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_type">form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          <!-- Add Text Here -->
+        </p><p>
+          <!-- More details about what a user can do with this object will be OK --> 
+        </p>
+      </field>
+    </record>
 
     <!-- This Menu Item must have a parent and an action -->
     <menuitem id="method_hidropower_informe_entrada_menu" name="Informes Técnicos" parent="repair.menu_repair_order" sequence="1"/>
+    <menuitem id="method_hidropower_maestros_menu" name="Parámetros" parent="repair.menu_repair_order" sequence="1"/>
+    <menuitem id="method_hidropower.estado_vastago_menu_act" name="Estados Vastago" parent="method_hidropower_maestros_menu" action="method_hidropower.estado_vastago" sequence="1"/>
     <menuitem id="method_hidropower.informe_entrada_menu_act" name="Informe de Entrada" parent="method_hidropower_informe_entrada_menu" action="method_hidropower.informe_entrada_action" sequence="1"/>
     <menuitem id="method_hidropower.informe_salida_menu_act" name="Informe de Salida" parent="method_hidropower_informe_entrada_menu" action="method_hidropower.informe_salida_action" sequence="1"/>
     <menuitem id="method_hidropower.otros_servicios" name="Otros Servicios" parent="method_hidropower_informe_entrada_menu" action="method_hidropower.otros_servicios_action" sequence="1"/>
