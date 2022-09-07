@@ -420,11 +420,270 @@
         </p>
       </field>
     </record>
+    <!-- Acción Vastago-->
+    <record id="method_hidropower.accion_vastago" model="ir.actions.act_window">
+      <field name="name">Acción Vastago</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">method_hidropower.accion_vastago</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_type">form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          <!-- Add Text Here -->
+        </p><p>
+          <!-- More details about what a user can do with this object will be OK --> 
+        </p>
+      </field>
+    </record>
+
+    
+    <!-- method_hidropower.condicion_anclaje-->
+    <record id="method_hidropower.condicion_anclaje" model="ir.actions.act_window">
+      <field name="name">Condición Anclaje</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">method_hidropower.condicion_anclaje</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_type">form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          <!-- Add Text Here -->
+        </p><p>
+          <!-- More details about what a user can do with this object will be OK --> 
+        </p>
+      </field>
+    </record>
+    
+    <!-- method_hidropower.accion_anclaje-->
+    <record id="method_hidropower.accion_anclaje" model="ir.actions.act_window">
+      <field name="name">Acción Anclaje</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">method_hidropower.accion_anclaje</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_type">form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          <!-- Add Text Here -->
+        </p><p>
+          <!-- More details about what a user can do with this object will be OK --> 
+        </p>
+      </field>
+    </record>
+
+    <!-- method_hidropower.estado_buje_rotula-->
+    <record id="method_hidropower.estado_buje_rotula" model="ir.actions.act_window">
+      <field name="name">Estado Buje-Rotula</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">method_hidropower.estado_buje_rotula</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_type">form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          <!-- Add Text Here -->
+        </p><p>
+          <!-- More details about what a user can do with this object will be OK --> 
+        </p>
+      </field>
+    </record>
+
+    <!-- method_hidropower.estado_botella-->
+    <record id="method_hidropower.estado_botella" model="ir.actions.act_window">
+      <field name="name">Estado Botella</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">method_hidropower.estado_botella</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_type">form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          <!-- Add Text Here -->
+        </p><p>
+          <!-- More details about what a user can do with this object will be OK --> 
+        </p>
+      </field>
+    </record>
+
+    <!-- method_hidropower.estado_botella-->
+    <record id="method_hidropower.estado_entrada_aceite" model="ir.actions.act_window">
+      <field name="name">Estado Entrada Aceite</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">method_hidropower.estado_entrada_aceite</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_type">form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          <!-- Add Text Here -->
+        </p><p>
+          <!-- More details about what a user can do with this object will be OK --> 
+        </p>
+      </field>
+    </record>
+
+    <!-- method_hidropower.accion_botella-->
+    <record id="method_hidropower.accion_botella" model="ir.actions.act_window">
+      <field name="name">Accion Botella</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">method_hidropower.accion_botella</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_type">form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          <!-- Add Text Here -->
+        </p><p>
+          <!-- More details about what a user can do with this object will be OK --> 
+        </p>
+      </field>
+    </record>
+
+    <!-- method_hidropower.accion_botella-->
+    <record id="method_hidropower.condiciones_interior_botella" model="ir.actions.act_window">
+      <field name="name">Condiciones Interior Botella</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">method_hidropower.condiciones_interior_botella</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_type">form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          <!-- Add Text Here -->
+        </p><p>
+          <!-- More details about what a user can do with this object will be OK --> 
+        </p>
+      </field>
+    </record>
+
+    <!-- method_hidropower.accion_botella-->
+    <record id="method_hidropower.estado_anclaje_botella" model="ir.actions.act_window">
+      <field name="name">Estado Anclaje Botella</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">method_hidropower.estado_anclaje_botella</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_type">form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          <!-- Add Text Here -->
+        </p><p>
+          <!-- More details about what a user can do with this object will be OK --> 
+        </p>
+      </field>
+    </record>
+
+    <!-- method_hidropower.accion_anclaje_botella-->
+    <record id="method_hidropower.accion_anclaje_botella" model="ir.actions.act_window">
+      <field name="name">Accion Anclaje Botella</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">method_hidropower.accion_anclaje_botella</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_type">form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          <!-- Add Text Here -->
+        </p><p>
+          <!-- More details about what a user can do with this object will be OK --> 
+        </p>
+      </field>
+    </record>
+
+    <!-- method_hidropower.estado_buje_rotula-->
+    <record id="method_hidropower.estado_buje_rotula" model="ir.actions.act_window">
+      <field name="name">Estado Buje Rotula</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">method_hidropower.estado_buje_rotula</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_type">form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          <!-- Add Text Here -->
+        </p><p>
+          <!-- More details about what a user can do with this object will be OK --> 
+        </p>
+      </field>
+    </record>
+
+    <!-- method_hidropower.estado_buje_rotula-->
+    <record id="method_hidropower.condicion_prensa" model="ir.actions.act_window">
+      <field name="name">Condicion Prensa</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">method_hidropower.condicion_prensa</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_type">form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          <!-- Add Text Here -->
+        </p><p>
+          <!-- More details about what a user can do with this object will be OK --> 
+        </p>
+      </field>
+    </record>
+
+    <!-- method_hidropower.accion_prensa-->
+    <record id="method_hidropower.accion_prensa" model="ir.actions.act_window">
+      <field name="name">Accion Prensa</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">method_hidropower.accion_prensa</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_type">form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          <!-- Add Text Here -->
+        </p><p>
+          <!-- More details about what a user can do with this object will be OK --> 
+        </p>
+      </field>
+    </record>
+
+    <!-- method_hidropower.condicion_piston-->
+    <record id="method_hidropower.condicion_piston" model="ir.actions.act_window">
+      <field name="name">Condicion Piston</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">method_hidropower.condicion_piston</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_type">form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          <!-- Add Text Here -->
+        </p><p>
+          <!-- More details about what a user can do with this object will be OK --> 
+        </p>
+      </field>
+    </record>
+
+
+    <!-- method_hidropower.accion_piston-->
+    <record id="method_hidropower.accion_piston" model="ir.actions.act_window">
+      <field name="name">Accion Piston</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">method_hidropower.accion_piston</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_type">form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          <!-- Add Text Here -->
+        </p><p>
+          <!-- More details about what a user can do with this object will be OK --> 
+        </p>
+      </field>
+    </record>
+
 
     <!-- This Menu Item must have a parent and an action -->
     <menuitem id="method_hidropower_informe_entrada_menu" name="Informes Técnicos" parent="repair.menu_repair_order" sequence="1"/>
-    <menuitem id="method_hidropower_maestros_menu" name="Parámetros" parent="repair.menu_repair_order" sequence="1"/>
+
+    <menuitem id="method_hidropower_maestros_menu" name="Parámetros" parent="repair.menu_repair_order" sequence="1"/>    
     <menuitem id="method_hidropower.estado_vastago_menu_act" name="Estados Vastago" parent="method_hidropower_maestros_menu" action="method_hidropower.estado_vastago" sequence="1"/>
+    <menuitem id="method_hidropower.accion_vastago_menu_act" name="Acciones Vastago" parent="method_hidropower_maestros_menu" action="method_hidropower.accion_vastago" sequence="1"/>
+    <menuitem id="method_hidropower.condicion_anclaje_menu_act" name="Condición Anclaje" parent="method_hidropower_maestros_menu" action="method_hidropower.condicion_anclaje" sequence="1"/>
+    <menuitem id="method_hidropower.accion_anclaje_menu_act" name="Acciónes Anclaje" parent="method_hidropower_maestros_menu" action="method_hidropower.accion_anclaje" sequence="1"/>
+    <menuitem id="method_hidropower.estado_buje_rotula_menu_act" name="Estado Buje Rotula" parent="method_hidropower_maestros_menu" action="method_hidropower.estado_buje_rotula" sequence="1"/>
+    <menuitem id="method_hidropower.estado_estado_botella_menu_act" name="Estado Botella" parent="method_hidropower_maestros_menu" action="method_hidropower.estado_botella" sequence="1"/>
+    <menuitem id="method_hidropower.estado_entrada_aceite_botella_menu_act" name="Estado Entrada Aceite" parent="method_hidropower_maestros_menu" action="method_hidropower.estado_entrada_aceite" sequence="1"/>
+    <menuitem id="method_hidropower.accion_botella_aceite_botella_menu_act" name="Accion Botella" parent="method_hidropower_maestros_menu" action="method_hidropower.accion_botella" sequence="1"/>
+    <menuitem id="method_hidropower.condiciones_interior_botella_menu_act" name="Condiciones Interior Botella" parent="method_hidropower_maestros_menu" action="method_hidropower.condiciones_interior_botella" sequence="1"/>
+    <menuitem id="method_hidropower.estado_anclaje_botella" name="Estado Anclaje Botella" parent="method_hidropower_maestros_menu" action="method_hidropower.estado_anclaje_botella" sequence="1"/>
+    <menuitem id="method_hidropower.accion_anclaje_botella" name="Accion Anclaje Botella" parent="method_hidropower_maestros_menu" action="method_hidropower.accion_anclaje_botella" sequence="1"/>
+    <menuitem id="method_hidropower.estado_buje_rotula" name="Estado Buje Rotula" parent="method_hidropower_maestros_menu" action="method_hidropower.estado_buje_rotula" sequence="1"/>
+    <menuitem id="method_hidropower.condicion_prensa" name="Condicion Prensa" parent="method_hidropower_maestros_menu" action="method_hidropower.condicion_prensa" sequence="1"/>
+    <menuitem id="method_hidropower.accion_prensa" name="Accion Prensa" parent="method_hidropower_maestros_menu" action="method_hidropower.accion_prensa" sequence="1"/>
+    <menuitem id="method_hidropower.condicion_piston" name="Condicion Piston" parent="method_hidropower_maestros_menu" action="method_hidropower.condicion_piston" sequence="1"/>
+    <menuitem id="method_hidropower.accion_piston" name="Accion Piston" parent="method_hidropower_maestros_menu" action="method_hidropower.accion_piston" sequence="1"/>
+
     <menuitem id="method_hidropower.informe_entrada_menu_act" name="Informe de Entrada" parent="method_hidropower_informe_entrada_menu" action="method_hidropower.informe_entrada_action" sequence="1"/>
     <menuitem id="method_hidropower.informe_salida_menu_act" name="Informe de Salida" parent="method_hidropower_informe_entrada_menu" action="method_hidropower.informe_salida_action" sequence="1"/>
     <menuitem id="method_hidropower.otros_servicios" name="Otros Servicios" parent="method_hidropower_informe_entrada_menu" action="method_hidropower.otros_servicios_action" sequence="1"/>
