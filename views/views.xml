@@ -241,7 +241,9 @@
 
                   <page string="Vista general del desarme" name="vista_general_desarme">
                     <group name="desarme" string="Vista general del desarme">
-                      <field name="img_desarme"/>
+                      <field name="img_desarme_1"/>
+                      <field name="img_desarme_2"/>
+                      <field name="img_desarme_3"/>
                       <field name="txt_desarme"/>                  
                     </group>
                   </page>
@@ -255,16 +257,25 @@
                       <field name="select_2_1_otros" attrs="{'invisible':[('select_2_1_es_otro', '=', False)]}"/>
                       <field name="select_2_2" widget="many2many_tags"/>
                     </group>
-                  </page>                  
-                  <page string="Fotografía de daño de vástago" name="fotografía_daño_vastago">                                    
-                    <group name="vastago_daño" string="Fotografía de daño de vástago">
+                  </page>              
+                  <!--Daño vástago-->
+                  <page string="Vista daño vástago" name="daño_vastago">                  
+                    <group name="daño_vastago" string="Vista daño vástago">
                       <field name="img_vastago_daño"/>
-                      <field name="txt_vastago_daño"/>                  
+                      <field name="img_vastago_daño_2"/>
+                      <field name="img_vastago_daño_3"/>
+                      <field name="img_vastago_daño_4"/>
+                      <field name="img_vastago_daño_5"/>
+                      <field name="txt_vastago_daño"/>
                     </group>
-                  </page>                                      
+                  </page>              
+
+
                   <page string="Vista general de anclaje de vástago" name="vista_general_anclaje_vastago">                                                      
                     <group name="anclaje" string="Vista general de anclaje de vástago">
                       <field name="img_anclaje_vastago"/>
+                      <field name="img_anclaje_vastago_2"/>
+                      <field name="img_anclaje_vastago_3"/>
                       <field name="select_3_1" widget="many2many_tags"/>
                       <field name="select_3_2" widget="many2many_tags"/>
                       <field name="select_3_3"/>
@@ -276,6 +287,8 @@
                   <page string="Vista general de botella" name="vista_general_botella">                                                                        
                     <group name="botella" string="Vista general de botella">
                       <field name="img_botella"/>
+                      <field name="img_botella_2"/>
+                      <field name="img_botella_3"/>
                       <field name="select_4_1" widget="many2many_tags"/>
                       <field name="select_4_2" widget="many2many_tags"/>
                       <field name="select_4_3" widget="many2many_tags"/>                  
@@ -284,13 +297,20 @@
                   <page string="Zoom interior de botella" name="zoom_interior_botella">                  
                     <group name="zoom_botella" string="Zoom interior de botella">
                       <field name="img_interior_botella"/>
+                      <field name="img_interior_botella_2"/>
+                      <field name="img_interior_botella_3"/>
                       <field name="select_4_4" widget="many2many_tags"/>                  
-                      <field name="select_4_4_B"/>                  
+                      <field name="select_4_4_1" widget="many2many_tags"/>                                        
+                      
+                      <field name="select_4_4_B"/>  
+                      <field name="select_4_4_C"/>  
                     </group>
                   </page>                                                                                
                   <page string="Anclaje de botella" name="anclaje_botella">                                                      
                     <group name="anclaje_botella" string="Anclaje de botella">
                       <field name="img_anclaje_botella"/>
+                      <field name="img_anclaje_botella_2"/>
+                      <field name="img_anclaje_botella_3"/>
                       <field name="select_5_1" widget="many2many_tags"/>
                       <field name="select_5_2" widget="many2many_tags"/>
                       <field name="select_5_3"/>
@@ -302,6 +322,8 @@
                   <page string="Vista general tapa prensa" name="vista_general_tapa_prensa">                                                                    
                     <group name="prensa" string="Vista general tapa prensa">
                       <field name="img_tapa_prensa"/>
+                      <field name="img_tapa_prensa_2"/>
+                      <field name="img_tapa_prensa_3"/>
                       <field name="select_6_1" widget="many2many_tags"/>
                       <field name="select_6_2" widget="many2many_tags"/>                  
                       <field name="select_6_3"/>
@@ -311,12 +333,26 @@
                   <page string="Vista general pistón" name="vista_general_pistón">                                                                                      
                     <group name="piston" string="Vista general pistón">
                       <field name="img_piston"/>
+                      <field name="img_piston_2"/>
+                      <field name="img_piston_3"/>
                       <field name="select_7_1" widget="many2many_tags"/>
                       <field name="select_7_2" widget="many2many_tags"/>                  
                       <field name="select_7_3"/>
                       
                     </group>
-                  </page>                  
+                  </page>    
+                  <page string="Otros" name="otros">                                                                                      
+                    <group name="otros" string="Otros">
+                      <field name="img_otros_1"/>
+                      <field name="img_otros_2"/>
+                      <field name="img_otros_3"/>
+                      <field name="img_otros_4"/>
+                      <field name="img_otros_5"/>
+                      <field name="txt_otros"/>
+                      
+                    </group>
+                  </page>    
+
                   <page string="Observaciones" name="observaciones">                  
                     <group name="obs" string="Observaciones">
                       <field name="observaciones"/>  
@@ -406,7 +442,7 @@
     </record> 
 
     <!-- Estados del Vastago-->
-    <record id="method_hidropower.estado_vastago" model="ir.actions.act_window">
+    <record id="method_hidropower.estado_vastago_action" model="ir.actions.act_window">
       <field name="name">Estados del Vastago</field>
       <field name="type">ir.actions.act_window</field>
       <field name="res_model">method_hidropower.estado_vastago</field>
@@ -421,7 +457,7 @@
       </field>
     </record>
     <!-- Acción Vastago-->
-    <record id="method_hidropower.accion_vastago" model="ir.actions.act_window">
+    <record id="method_hidropower.accion_vastago_action" model="ir.actions.act_window">
       <field name="name">Acción Vastago</field>
       <field name="type">ir.actions.act_window</field>
       <field name="res_model">method_hidropower.accion_vastago</field>
@@ -438,7 +474,7 @@
 
     
     <!-- method_hidropower.condicion_anclaje-->
-    <record id="method_hidropower.condicion_anclaje" model="ir.actions.act_window">
+    <record id="method_hidropower.condicion_anclaje_action" model="ir.actions.act_window">
       <field name="name">Condición Anclaje</field>
       <field name="type">ir.actions.act_window</field>
       <field name="res_model">method_hidropower.condicion_anclaje</field>
@@ -454,7 +490,7 @@
     </record>
     
     <!-- method_hidropower.accion_anclaje-->
-    <record id="method_hidropower.accion_anclaje" model="ir.actions.act_window">
+    <record id="method_hidropower.accion_anclaje_action" model="ir.actions.act_window">
       <field name="name">Acción Anclaje</field>
       <field name="type">ir.actions.act_window</field>
       <field name="res_model">method_hidropower.accion_anclaje</field>
@@ -470,7 +506,7 @@
     </record>
 
     <!-- method_hidropower.estado_buje_rotula-->
-    <record id="method_hidropower.estado_buje_rotula" model="ir.actions.act_window">
+    <record id="method_hidropower.estado_buje_rotula_action" model="ir.actions.act_window">
       <field name="name">Estado Buje-Rotula</field>
       <field name="type">ir.actions.act_window</field>
       <field name="res_model">method_hidropower.estado_buje_rotula</field>
@@ -486,7 +522,7 @@
     </record>
 
     <!-- method_hidropower.estado_botella-->
-    <record id="method_hidropower.estado_botella" model="ir.actions.act_window">
+    <record id="method_hidropower.estado_botella_action" model="ir.actions.act_window">
       <field name="name">Estado Botella</field>
       <field name="type">ir.actions.act_window</field>
       <field name="res_model">method_hidropower.estado_botella</field>
@@ -502,7 +538,7 @@
     </record>
 
     <!-- method_hidropower.estado_botella-->
-    <record id="method_hidropower.estado_entrada_aceite" model="ir.actions.act_window">
+    <record id="method_hidropower.estado_entrada_aceite_action" model="ir.actions.act_window">
       <field name="name">Estado Entrada Aceite</field>
       <field name="type">ir.actions.act_window</field>
       <field name="res_model">method_hidropower.estado_entrada_aceite</field>
@@ -518,7 +554,7 @@
     </record>
 
     <!-- method_hidropower.accion_botella-->
-    <record id="method_hidropower.accion_botella" model="ir.actions.act_window">
+    <record id="method_hidropower.accion_botella_action" model="ir.actions.act_window">
       <field name="name">Accion Botella</field>
       <field name="type">ir.actions.act_window</field>
       <field name="res_model">method_hidropower.accion_botella</field>
@@ -534,7 +570,7 @@
     </record>
 
     <!-- method_hidropower.accion_botella-->
-    <record id="method_hidropower.condiciones_interior_botella" model="ir.actions.act_window">
+    <record id="method_hidropower.condiciones_interior_botella_action" model="ir.actions.act_window">
       <field name="name">Condiciones Interior Botella</field>
       <field name="type">ir.actions.act_window</field>
       <field name="res_model">method_hidropower.condiciones_interior_botella</field>
@@ -550,7 +586,7 @@
     </record>
 
     <!-- method_hidropower.accion_botella-->
-    <record id="method_hidropower.estado_anclaje_botella" model="ir.actions.act_window">
+    <record id="method_hidropower.estado_anclaje_botella_action" model="ir.actions.act_window">
       <field name="name">Estado Anclaje Botella</field>
       <field name="type">ir.actions.act_window</field>
       <field name="res_model">method_hidropower.estado_anclaje_botella</field>
@@ -566,7 +602,7 @@
     </record>
 
     <!-- method_hidropower.accion_anclaje_botella-->
-    <record id="method_hidropower.accion_anclaje_botella" model="ir.actions.act_window">
+    <record id="method_hidropower.accion_anclaje_botella_action" model="ir.actions.act_window">
       <field name="name">Accion Anclaje Botella</field>
       <field name="type">ir.actions.act_window</field>
       <field name="res_model">method_hidropower.accion_anclaje_botella</field>
@@ -582,7 +618,7 @@
     </record>
 
     <!-- method_hidropower.estado_buje_rotula-->
-    <record id="method_hidropower.estado_buje_rotula" model="ir.actions.act_window">
+    <record id="method_hidropower.estado_buje_rotula_action" model="ir.actions.act_window">
       <field name="name">Estado Buje Rotula</field>
       <field name="type">ir.actions.act_window</field>
       <field name="res_model">method_hidropower.estado_buje_rotula</field>
@@ -598,7 +634,7 @@
     </record>
 
     <!-- method_hidropower.estado_buje_rotula-->
-    <record id="method_hidropower.condicion_prensa" model="ir.actions.act_window">
+    <record id="method_hidropower.condicion_prensa_action" model="ir.actions.act_window">
       <field name="name">Condicion Prensa</field>
       <field name="type">ir.actions.act_window</field>
       <field name="res_model">method_hidropower.condicion_prensa</field>
@@ -614,7 +650,7 @@
     </record>
 
     <!-- method_hidropower.accion_prensa-->
-    <record id="method_hidropower.accion_prensa" model="ir.actions.act_window">
+    <record id="method_hidropower.accion_prensa_action" model="ir.actions.act_window">
       <field name="name">Accion Prensa</field>
       <field name="type">ir.actions.act_window</field>
       <field name="res_model">method_hidropower.accion_prensa</field>
@@ -630,7 +666,7 @@
     </record>
 
     <!-- method_hidropower.condicion_piston-->
-    <record id="method_hidropower.condicion_piston" model="ir.actions.act_window">
+    <record id="method_hidropower.condicion_piston_action" model="ir.actions.act_window">
       <field name="name">Condicion Piston</field>
       <field name="type">ir.actions.act_window</field>
       <field name="res_model">method_hidropower.condicion_piston</field>
@@ -647,10 +683,42 @@
 
 
     <!-- method_hidropower.accion_piston-->
-    <record id="method_hidropower.accion_piston" model="ir.actions.act_window">
+    <record id="method_hidropower.accion_piston_action" model="ir.actions.act_window">
       <field name="name">Accion Piston</field>
       <field name="type">ir.actions.act_window</field>
       <field name="res_model">method_hidropower.accion_piston</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_type">form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          <!-- Add Text Here -->
+        </p><p>
+          <!-- More details about what a user can do with this object will be OK --> 
+        </p>
+      </field>
+    </record>
+
+    <!--method_hidropower.accion_rotula_buje-->
+    <record id="method_hidropower.accion_rotula_buje_action" model="ir.actions.act_window">
+      <field name="name">Accion Rotulo/Buje</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">method_hidropower.accion_rotula_buje</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_type">form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          <!-- Add Text Here -->
+        </p><p>
+          <!-- More details about what a user can do with this object will be OK --> 
+        </p>
+      </field>
+    </record>
+
+    <!--method_hidropower.accion_zoom_botella-->
+    <record id="method_hidropower.accion_zoom_interior_botella_action" model="ir.actions.act_window">
+      <field name="name">Accion Zoom Interior Botella</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">method_hidropower.accion_zoom_botella</field>
       <field name="view_mode">tree,form</field>
       <field name="view_type">form</field>
       <field name="help" type="html">
@@ -667,22 +735,25 @@
     <menuitem id="method_hidropower_informe_entrada_menu" name="Informes Técnicos" parent="repair.menu_repair_order" sequence="1"/>
 
     <menuitem id="method_hidropower_maestros_menu" name="Parámetros" parent="repair.menu_repair_order" sequence="1"/>    
-    <menuitem id="method_hidropower.estado_vastago_menu_act" name="Estados Vastago" parent="method_hidropower_maestros_menu" action="method_hidropower.estado_vastago" sequence="1"/>
-    <menuitem id="method_hidropower.accion_vastago_menu_act" name="Acciones Vastago" parent="method_hidropower_maestros_menu" action="method_hidropower.accion_vastago" sequence="1"/>
-    <menuitem id="method_hidropower.condicion_anclaje_menu_act" name="Condición Anclaje" parent="method_hidropower_maestros_menu" action="method_hidropower.condicion_anclaje" sequence="1"/>
-    <menuitem id="method_hidropower.accion_anclaje_menu_act" name="Acciónes Anclaje" parent="method_hidropower_maestros_menu" action="method_hidropower.accion_anclaje" sequence="1"/>
-    <menuitem id="method_hidropower.estado_buje_rotula_menu_act" name="Estado Buje Rotula" parent="method_hidropower_maestros_menu" action="method_hidropower.estado_buje_rotula" sequence="1"/>
-    <menuitem id="method_hidropower.estado_estado_botella_menu_act" name="Estado Botella" parent="method_hidropower_maestros_menu" action="method_hidropower.estado_botella" sequence="1"/>
-    <menuitem id="method_hidropower.estado_entrada_aceite_botella_menu_act" name="Estado Entrada Aceite" parent="method_hidropower_maestros_menu" action="method_hidropower.estado_entrada_aceite" sequence="1"/>
-    <menuitem id="method_hidropower.accion_botella_aceite_botella_menu_act" name="Accion Botella" parent="method_hidropower_maestros_menu" action="method_hidropower.accion_botella" sequence="1"/>
-    <menuitem id="method_hidropower.condiciones_interior_botella_menu_act" name="Condiciones Interior Botella" parent="method_hidropower_maestros_menu" action="method_hidropower.condiciones_interior_botella" sequence="1"/>
-    <menuitem id="method_hidropower.estado_anclaje_botella" name="Estado Anclaje Botella" parent="method_hidropower_maestros_menu" action="method_hidropower.estado_anclaje_botella" sequence="1"/>
-    <menuitem id="method_hidropower.accion_anclaje_botella" name="Accion Anclaje Botella" parent="method_hidropower_maestros_menu" action="method_hidropower.accion_anclaje_botella" sequence="1"/>
-    <menuitem id="method_hidropower.estado_buje_rotula" name="Estado Buje Rotula" parent="method_hidropower_maestros_menu" action="method_hidropower.estado_buje_rotula" sequence="1"/>
-    <menuitem id="method_hidropower.condicion_prensa" name="Condicion Prensa" parent="method_hidropower_maestros_menu" action="method_hidropower.condicion_prensa" sequence="1"/>
-    <menuitem id="method_hidropower.accion_prensa" name="Accion Prensa" parent="method_hidropower_maestros_menu" action="method_hidropower.accion_prensa" sequence="1"/>
-    <menuitem id="method_hidropower.condicion_piston" name="Condicion Piston" parent="method_hidropower_maestros_menu" action="method_hidropower.condicion_piston" sequence="1"/>
-    <menuitem id="method_hidropower.accion_piston" name="Accion Piston" parent="method_hidropower_maestros_menu" action="method_hidropower.accion_piston" sequence="1"/>
+    <menuitem id="method_hidropower.accion_rotula_buje_menu_act" name="Acción Rotula/Buje" parent="method_hidropower_maestros_menu" action="method_hidropower.accion_rotula_buje_action" sequence="1"/>
+    <menuitem id="method_hidropower.accion_zoom_interior_botella_menu_act" name="Acción Zoom Interior Botella" parent="method_hidropower_maestros_menu" action="method_hidropower.accion_zoom_interior_botella_action" sequence="1"/>
+    
+    <menuitem id="method_hidropower.estado_vastago_menu_act" name="Estados Vastago" parent="method_hidropower_maestros_menu" action="method_hidropower.estado_vastago_action" sequence="1"/>
+    <menuitem id="method_hidropower.accion_vastago_menu_act" name="Acciones Vastago" parent="method_hidropower_maestros_menu" action="method_hidropower.accion_vastago_action" sequence="1"/>
+    <menuitem id="method_hidropower.condicion_anclaje_menu_act" name="Condición Anclaje" parent="method_hidropower_maestros_menu" action="method_hidropower.condicion_anclaje_action" sequence="1"/>
+    <menuitem id="method_hidropower.accion_anclaje_menu_act" name="Acciónes Anclaje" parent="method_hidropower_maestros_menu" action="method_hidropower.accion_anclaje_action" sequence="1"/>
+    <menuitem id="method_hidropower.estado_buje_rotula_menu_act" name="Estado Buje Rotula" parent="method_hidropower_maestros_menu" action="method_hidropower.estado_buje_rotula_action" sequence="1"/>
+    <menuitem id="method_hidropower.estado_estado_botella_menu_act" name="Estado Botella" parent="method_hidropower_maestros_menu" action="method_hidropower.estado_botella_action" sequence="1"/>
+    <menuitem id="method_hidropower.estado_entrada_aceite_botella_menu_act" name="Estado Entrada Aceite" parent="method_hidropower_maestros_menu" action="method_hidropower.estado_entrada_aceite_action" sequence="1"/>
+    <menuitem id="method_hidropower.accion_botella_aceite_botella_menu_act" name="Accion Botella" parent="method_hidropower_maestros_menu" action="method_hidropower.accion_botella_action" sequence="1"/>
+    <menuitem id="method_hidropower.condiciones_interior_botella_menu_act" name="Condiciones Interior Botella" parent="method_hidropower_maestros_menu" action="method_hidropower.condiciones_interior_botella_action" sequence="1"/>
+    <menuitem id="method_hidropower.estado_anclaje_botella" name="Estado Anclaje Botella" parent="method_hidropower_maestros_menu" action="method_hidropower.estado_anclaje_botella_action" sequence="1"/>
+    <menuitem id="method_hidropower.accion_anclaje_botella" name="Accion Anclaje Botella" parent="method_hidropower_maestros_menu" action="method_hidropower.accion_anclaje_botella_action" sequence="1"/>
+    <menuitem id="method_hidropower.estado_buje_rotula" name="Estado Buje Rotula" parent="method_hidropower_maestros_menu" action="method_hidropower.estado_buje_rotula_action" sequence="1"/>
+    <menuitem id="method_hidropower.condicion_prensa" name="Condicion Prensa" parent="method_hidropower_maestros_menu" action="method_hidropower.condicion_prensa_action" sequence="1"/>
+    <menuitem id="method_hidropower.accion_prensa" name="Accion Prensa" parent="method_hidropower_maestros_menu" action="method_hidropower.accion_prensa_action" sequence="1"/>
+    <menuitem id="method_hidropower.condicion_piston" name="Condicion Piston" parent="method_hidropower_maestros_menu" action="method_hidropower.condicion_piston_action" sequence="1"/>
+    <menuitem id="method_hidropower.accion_piston" name="Accion Piston" parent="method_hidropower_maestros_menu" action="method_hidropower.accion_piston_action" sequence="1"/>
 
     <menuitem id="method_hidropower.informe_entrada_menu_act" name="Informe de Entrada" parent="method_hidropower_informe_entrada_menu" action="method_hidropower.informe_entrada_action" sequence="1"/>
     <menuitem id="method_hidropower.informe_salida_menu_act" name="Informe de Salida" parent="method_hidropower_informe_entrada_menu" action="method_hidropower.informe_salida_action" sequence="1"/>

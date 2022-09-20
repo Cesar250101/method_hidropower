@@ -34,7 +34,7 @@
                             <h1 class="text-center" style="color:red">Informe técnico</h1>
                             <h1 class="text-center" style="color:red;">Pruebas Cilindros Hidráulicos.</h1>
                             <h1 class="text-center" style="color:red;"><span t-field="o.partner_id.name" /></h1>
-                            <div id="inferior" style="position: relative;top: 600px; left: 800px;">
+                            <div id="inferior" style="position: relative;top: 400px; left: 800px;">
                                 <h2 style="color:red;"><span t-field="o.nombre_cilindro" /></h2>
                                 <h2 style="color:red"><span t-field="o.modelo_cilindro" /></h2>
                             </div>
@@ -409,25 +409,27 @@
                         <table style="width:90%">
                             <tr><td><strong>1.Vista general del desarme.</strong></td></tr>
                             <tr>
-                                <th>Elemento</th>
-                                <th>Evaluación</th>
+                                <th width="60%">Elemento</th>
+                                <th width="40%" valign="top">Evaluación</th>
                             </tr>
                             <tr>
-                                <td>
-                                    <img t-if="o.img_desarme" t-att-src="'data:image/png;base64,%s' % to_text(o.img_desarme)"  width="100px" height="300"/>
+                                <td width="60%">
+                                    <img t-if="o.img_desarme_1" t-att-src="'data:image/png;base64,%s' % to_text(o.img_desarme_1)"  width="400px" height="300"/><br></br>
+                                    <img t-if="o.img_desarme_2" t-att-src="'data:image/png;base64,%s' % to_text(o.img_desarme_2)"  width="400px" height="300"/><br></br>
+                                    <img t-if="o.img_desarme_3" t-att-src="'data:image/png;base64,%s' % to_text(o.img_desarme_3)"  width="400px" height="300"/><br></br>
                                 </td>
-                                <td>
+                                <td width="40%" valign="top">
                                     <span t-esc="o.txt_desarme" />
                                 </td>
                             </tr>
                             <tr><td><strong>2.Vista general del vástago.</strong></td></tr>
                             <tr>
                                 <td>
-                                    <img t-if="o.img_vastago_1" t-att-src="'data:image/png;base64,%s' % to_text(o.img_vastago_1)" width="100px" height="300"/><br></br>
-                                    <img t-if="o.img_vastago_2" t-att-src="'data:image/png;base64,%s' % to_text(o.img_vastago_2)" width="100px" height="300"/><br></br>
-                                    <img t-if="o.img_vastago_3" t-att-src="'data:image/png;base64,%s' % to_text(o.img_vastago_3)" width="100px" height="300"/><br></br>
+                                    <img t-if="o.img_vastago_1" t-att-src="'data:image/png;base64,%s' % to_text(o.img_vastago_1)" width="400px" height="300"/><br></br>
+                                    <img t-if="o.img_vastago_2" t-att-src="'data:image/png;base64,%s' % to_text(o.img_vastago_2)" width="400px" height="300"/><br></br>
+                                    <img t-if="o.img_vastago_3" t-att-src="'data:image/png;base64,%s' % to_text(o.img_vastago_3)" width="400px" height="300"/><br></br>
                                 </td>
-                                <td>
+                                <td valign="top">
                                     <span>2.1 Vástago del componente se presenta :</span>
                                     <t t-foreach="o.select_2_1" t-as="l">                                
                                         <li><span t-field="l.name" /></li>
@@ -442,18 +444,24 @@
                             <tr><td><strong>2.1 Fotografías de daños de vástago.</strong></td></tr>
                             <tr>
                                 <td>
-                                    <img t-if="o.img_vastago_daño" t-att-src="'data:image/png;base64,%s' % to_text(o.img_vastago_daño)" width="100px" height="300"/>
+                                    <img t-if="o.img_vastago_daño" t-att-src="'data:image/png;base64,%s' % to_text(o.img_vastago_daño)" width="400px" height="300"/>
+                                    <img t-if="o.img_vastago_daño_2" t-att-src="'data:image/png;base64,%s' % to_text(o.img_vastago_daño_2)" width="400px" height="300"/>
+                                    <img t-if="o.img_vastago_daño_3" t-att-src="'data:image/png;base64,%s' % to_text(o.img_vastago_daño_3)" width="400px" height="300"/>
+                                    <img t-if="o.img_vastago_daño_4" t-att-src="'data:image/png;base64,%s' % to_text(o.img_vastago_daño_4)" width="400px" height="300"/>
+                                    <img t-if="o.img_vastago_daño_5" t-att-src="'data:image/png;base64,%s' % to_text(o.img_vastago_daño_5)" width="400px" height="300"/>
                                 </td>
-                                <td>
+                                <td valign="top">
                                     <span></span><span t-field="o.txt_vastago_daño" />
                                 </td>
                             </tr>                            
                             <tr><td><strong>3.Vista general de anclaje de vástago</strong></td></tr>
                             <tr>
                                 <td>
-                                    <img t-if="o.img_anclaje_vastago" t-att-src="'data:image/png;base64,%s' % to_text(o.img_anclaje_vastago)" width="100px" height="300"/>
+                                    <img t-if="o.img_anclaje_vastago" t-att-src="'data:image/png;base64,%s' % to_text(o.img_anclaje_vastago)" width="400px" height="300"/>
+                                    <img t-if="o.img_anclaje_vastago_2" t-att-src="'data:image/png;base64,%s' % to_text(o.img_anclaje_vastago_2)" width="400px" height="300"/>
+                                    <img t-if="o.img_anclaje_vastago_2" t-att-src="'data:image/png;base64,%s' % to_text(o.img_anclaje_vastago_3)" width="400px" height="300"/>
                                 </td>
-                                <td>
+                                <td valign="top">
                                     <span>3.1 Anclaje del vástago se encuentra </span>
                                     <t t-foreach="o.select_3_1" t-as="l">                                
                                         <li><span t-field="l.name"/></li>
@@ -487,9 +495,11 @@
                             <tr><td><strong>4.1	Vista general de botella.</strong></td></tr>
                             <tr>
                                 <td>
-                                    <img t-if="o.img_botella" t-att-src="'data:image/png;base64,%s' % to_text(o.img_botella)" width="100px" height="300"/>
+                                    <img t-if="o.img_botella" t-att-src="'data:image/png;base64,%s' % to_text(o.img_botella)" width="400px" height="300"/>
+                                    <img t-if="o.img_botella_2" t-att-src="'data:image/png;base64,%s' % to_text(o.img_botella_2)" width="400px" height="300"/>
+                                    <img t-if="o.img_botella_3" t-att-src="'data:image/png;base64,%s' % to_text(o.img_botella_3)" width="400px" height="300"/>
                                 </td>
-                                <td>
+                                <td valign="top">
                                     <span>4.1 Botella del componente se presenta  </span>
                                     <t t-foreach="o.select_4_1" t-as="l">                                
                                         <li><span t-field="l.name" /></li>
@@ -509,22 +519,36 @@
                             <tr><td><strong>4.2	Zoom interior de botella.</strong></td></tr>
                             <tr>
                                 <td>
-                                    <img t-if="o.img_interior_botella" t-att-src="'data:image/png;base64,%s' % to_text(o.img_interior_botella)" width="100px" height="300"/>
+                                    <img t-if="o.img_interior_botella" t-att-src="'data:image/png;base64,%s' % to_text(o.img_interior_botella)" width="400px" height="300"/><br></br>
+                                    <img t-if="o.img_interior_botella_2" t-att-src="'data:image/png;base64,%s' % to_text(o.img_interior_botella_2)" width="400px" height="300"/><br></br>
+                                    <img t-if="o.img_interior_botella_3" t-att-src="'data:image/png;base64,%s' % to_text(o.img_interior_botella_3)" width="400px" height="300"/><br></br>
                                 </td>
-                                <td>
+                                <td valign="top">
                                     <span>4.3 Interior de botella se presenta con: </span>
                                     <t t-foreach="o.select_4_4" t-as="l">                                
                                         <li><span t-field="l.name" /></li>
                                     </t> 
+                                    <span>4.4 Acción a realizar Interior de botella: </span>
+                                    <t t-foreach="o.select_4_4_1" t-as="l">                                
+                                        <li><span t-field="l.name" /></li>
+                                    </t> 
+
                                     <span> producto del trabajo y que </span><span t-field="o.select_4_4_B" />
+
+                                    <t t-foreach="o.select_4_4_C" t-as="l">                                
+                                        <li><span t-field="l.name" /></li>
+                                    </t> 
+
                                 </td>
                             </tr>
                             <tr><td><strong>5.Anclaje de botella </strong></td></tr>
                             <tr>
                                 <td>
-                                    <img t-if="o.img_anclaje_botella" t-att-src="'data:image/png;base64,%s' % to_text(o.img_anclaje_botella)" width="100px" height="300"/>
+                                    <img t-if="o.img_anclaje_botella" t-att-src="'data:image/png;base64,%s' % to_text(o.img_anclaje_botella)" width="400px" height="300"/>
+                                    <img t-if="o.img_anclaje_botella_2" t-att-src="'data:image/png;base64,%s' % to_text(o.img_anclaje_botella_2)" width="400px" height="300"/>
+                                    <img t-if="o.img_anclaje_botella_3" t-att-src="'data:image/png;base64,%s' % to_text(o.img_anclaje_botella_3)" width="400px" height="300"/>
                                 </td>
-                                <td>
+                                <td valign="top">
                                     <span>5.1 Anclaje del vástago se encuentra: </span>
                                     <t t-foreach="o.select_5_1" t-as="l">                                
                                         <li><span t-field="l.name" /></li>
@@ -555,9 +579,11 @@
                             <tr><td><strong>6. Vista general tapa prensa.</strong></td></tr>
                             <tr>
                                 <td>
-                                    <img t-if="o.img_tapa_prensa" t-att-src="'data:image/png;base64,%s' % to_text(o.img_tapa_prensa)" width="100px" height="300"/>
+                                    <img t-if="o.img_tapa_prensa" t-att-src="'data:image/png;base64,%s' % to_text(o.img_tapa_prensa)" width="400px" height="300"/>
+                                    <img t-if="o.img_tapa_prensa_2" t-att-src="'data:image/png;base64,%s' % to_text(o.img_tapa_prensa_2)" width="400px" height="300"/>
+                                    <img t-if="o.img_tapa_prensa_3" t-att-src="'data:image/png;base64,%s' % to_text(o.img_tapa_prensa_3)" width="400px" height="300"/>
                                 </td>
-                                <td>
+                                <td valign="top">
                                     <span>6.1 Prensa del componente se presenta: </span>
                                     <t t-foreach="o.select_6_1" t-as="l">                                
                                         <li><span t-field="l.name" /></li>
@@ -573,9 +599,11 @@
                             <tr><td><strong>7.	Vista general pistón.</strong></td></tr>
                             <tr>
                                 <td>
-                                    <img t-if="o.img_piston" t-att-src="'data:image/png;base64,%s' % to_text(o.img_piston)" width="100px" height="300"/>
+                                    <img t-if="o.img_piston" t-att-src="'data:image/png;base64,%s' % to_text(o.img_piston)" width="400px" height="300"/>
+                                    <img t-if="o.img_piston_2" t-att-src="'data:image/png;base64,%s' % to_text(o.img_piston_2)" width="400px" height="300"/>
+                                    <img t-if="o.img_piston_3" t-att-src="'data:image/png;base64,%s' % to_text(o.img_piston_3)" width="400px" height="300"/>
                                 </td>
-                                <td>
+                                <td valign="top">
                                     <span>7.1 Pistón del componente se presenta: </span>
                                     <t t-foreach="o.select_7_1" t-as="l">                                
                                         <li><span t-field="l.name" /></li>
@@ -588,6 +616,22 @@
                                     <span t-field="o.select_7_3"/>
                                 </td>
                             </tr>                            
+                            <tr><td><strong>8.	Otros.</strong></td></tr>
+                            <tr>
+                                <td>
+                                    <img t-if="o.img_otros_1" t-att-src="'data:image/png;base64,%s' % to_text(o.img_otros_1)" width="400px" height="300"/>
+                                    <img t-if="o.img_otros_2" t-att-src="'data:image/png;base64,%s' % to_text(o.img_otros_2)" width="400px" height="300"/>
+                                    <img t-if="o.img_otros_3" t-att-src="'data:image/png;base64,%s' % to_text(o.img_otros_3)" width="400px" height="300"/>
+                                    <img t-if="o.img_otros_4" t-att-src="'data:image/png;base64,%s' % to_text(o.img_otros_4)" width="400px" height="300"/>
+                                    <img t-if="o.img_otros_5" t-att-src="'data:image/png;base64,%s' % to_text(o.img_otros_5)" width="400px" height="300"/>
+                                </td>
+                                <td valign="top">
+                                    <p class="text-justify">
+                                        <strong>Otros: </strong><t t-esc="o.txt_otros"/>
+                                    </p>
+                                </td>
+                            </tr>                            
+
 
                         </table>  
                         <br></br>      
