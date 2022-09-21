@@ -31,9 +31,9 @@
           </button>      
 
         </xpath>                    
-        <xpath expr="//field[@name='address_id']" position="after">
+        <!--<xpath expr="//field[@name='address_id']" position="after">
           <field name="informe_entrada_ids" />
-        </xpath>          
+        </xpath>-->
         <xpath expr="//notebook" position="inside">
           <page name="valorizacion" string="Valorización">
             <group>
@@ -114,7 +114,7 @@
                   <field name="hora_text"/>
                 </group>
                 <group name="otros" string="Otros">
-                  <field name="otros" widget="many2many_checkboxes"/>
+                  <field name="otros_servicios" widget="many2many_checkboxes"/>
                 </group>
                 <group name="postura_sellos" string="Postura de Sellos">
                   <field name="img_1"/>
@@ -734,7 +734,7 @@
     <!-- This Menu Item must have a parent and an action -->
     <menuitem id="method_hidropower_informe_entrada_menu" name="Informes Técnicos" parent="repair.menu_repair_order" sequence="1"/>
 
-    <menuitem id="method_hidropower_maestros_menu" name="Parámetros" parent="repair.menu_repair_order" sequence="1"/>    
+    <menuitem id="method_hidropower_maestros_menu" name="Parámetros Informe Entrada" parent="repair.menu_repair_order" sequence="1"/>    
     <menuitem id="method_hidropower.accion_rotula_buje_menu_act" name="Acción Rotula/Buje" parent="method_hidropower_maestros_menu" action="method_hidropower.accion_rotula_buje_action" sequence="1"/>
     <menuitem id="method_hidropower.accion_zoom_interior_botella_menu_act" name="Acción Zoom Interior Botella" parent="method_hidropower_maestros_menu" action="method_hidropower.accion_zoom_interior_botella_action" sequence="1"/>
     
@@ -757,7 +757,6 @@
 
     <menuitem id="method_hidropower.informe_entrada_menu_act" name="Informe de Entrada" parent="method_hidropower_informe_entrada_menu" action="method_hidropower.informe_entrada_action" sequence="1"/>
     <menuitem id="method_hidropower.informe_salida_menu_act" name="Informe de Salida" parent="method_hidropower_informe_entrada_menu" action="method_hidropower.informe_salida_action" sequence="1"/>
-    <menuitem id="method_hidropower.otros_servicios" name="Otros Servicios" parent="method_hidropower_informe_entrada_menu" action="method_hidropower.otros_servicios_action" sequence="1"/>
 
   </data>
 </odoo>

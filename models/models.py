@@ -56,7 +56,7 @@ class InformeSalida(models.Model):
     duracion_text_senso = fields.Char(string='Duración test senson node blue parker')    
     hora_text = fields.Char(string='Hora Test')    
 
-    otros = fields.One2many('method_hidropower.otros', 'informe_salida_id', string='Otros Servicios')
+    otros_servicios = fields.One2many('method_hidropower.otros', 'informe_salida_id', string='Otros Servicios')
 
     img_1=fields.Binary('Imagen kit sello')
     img_2_1=fields.Binary('Imagen sello tapa prensa 1')

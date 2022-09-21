@@ -616,7 +616,7 @@
                                     <span t-field="o.select_7_3"/>
                                 </td>
                             </tr>                            
-                            <tr><td><strong>8.	Otros.</strong></td></tr>
+                            <tr><td><strong>8. Otros.</strong></td></tr>
                             <tr>
                                 <td>
                                     <img t-if="o.img_otros_1" t-att-src="'data:image/png;base64,%s' % to_text(o.img_otros_1)" width="400px" height="300"/>
