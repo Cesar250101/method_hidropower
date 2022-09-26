@@ -21,3 +21,4 @@ accion_rotula_buje,Acción Rotula Buje,method_hidropower.model_method_hidropower
 accion_zoom_interior_botella,Acción Zoom Botella,method_hidropower.model_method_hidropower_accion_zoom_botella,mrp.group_mrp_manager,1,1,1,1
 accion_interior_botella,Acción Interior Botella,method_hidropower.model_method_hidropower_accion_interior_botella,mrp.group_mrp_manager,1,1,1,1
 informe_salida_otros_servicios,Otros servicios,method_hidropower.model_method_hidropower_otros,mrp.group_mrp_manager,1,1,1,1
+informe_entrada_accion_buje_rotula,Acción Realizar Buje/Rotula,method_hidropower.model_method_hidropower_accion_realizar_buje_rotula,mrp.group_mrp_manager,1,1,1,1

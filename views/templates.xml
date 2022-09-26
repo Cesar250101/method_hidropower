@@ -366,6 +366,16 @@
                                 </table>                                    
                             </div>                            
                             <br></br>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+
                             <h2 class="text-center">INFORME TÉCNICO</h2>
                             <table style="width:100%">
                                 <tr>
@@ -400,12 +410,24 @@
                                 </tr>
                             </table>                                    
                         </div>
+                        <br></br>
+                        <br></br>
+                        <br></br>
                         <div class="row text-center">
-                            <img t-if="o.img_cilindro_completo" t-att-src="'data:image/png;base64,%s' % to_text(o.img_cilindro_completo)"/>
+                            <img t-if="o.img_cilindro_completo" t-att-src="'data:image/png;base64,%s' % to_text(o.img_cilindro_completo)" width="1100px" height="700"/>
                         </div>
                         <p class="text-justify">
                             Componente es recepcionado con el propósito de desarme, inspección y evaluación para posterior confección de presupuesto por su reparación.
                         </p>                        
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+
                         <table style="width:90%">
                             <tr><td><strong>1.Vista general del desarme.</strong></td></tr>
                             <tr>

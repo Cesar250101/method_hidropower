@@ -24,120 +24,10 @@ class ModuleName(models.Model):
         self.informe_entrada_count
         
     
-    
-class Otros(models.Model):
-    _name = 'method_hidropower.otros'
-    _description = 'Selección multiple de otros '
-
-    name = fields.Char(string='Nombre')
-    informe_salida_id = fields.Many2one(comodel_name='method_hidropower.informe_salida', string='Informe de Salida')
-    
+        
 
     
 
-
-class InformeSalida(models.Model):
-    _name = 'method_hidropower.informe_salida'
-    _description = 'Informe de Salida'
-
-    name = fields.Char(string='Nombre Informe')    
-    repair_order_id = fields.Many2one(comodel_name='repair.order', string='Orden de Reparación')    
-    partner_id = fields.Many2one(comodel_name='res.partner', string='Cliente')    
-    nombre_cilindro = fields.Char(string='Nombre Cilindro')    
-    modelo_cilindro = fields.Char(string='Modelo Cilindro')    
-    seriecilindro = fields.Char(string='Serie Cilindro')    
-    
-    mecanico = fields.Char(string='Mecánico')    
-    fecha_test = fields.Date(string='Fecha Test')
-    presion_max = fields.Char(string='Pesión Máxima')    
-    presion_min = fields.Char(string='Pesión Mínima')    
-    presion_util = fields.Char(string='Pesión Utilizada')    
-    duracion_text = fields.Char(string='Duranción Test')    
-    duracion_text_senso = fields.Char(string='Duración test senson node blue parker')    
-    hora_text = fields.Char(string='Hora Test')    
-
-    otros_servicios = fields.One2many('method_hidropower.otros', 'informe_salida_id', string='Otros Servicios')
-
-    img_1=fields.Binary('Imagen kit sello')
-    img_2_1=fields.Binary('Imagen sello tapa prensa 1')
-    img_2_2=fields.Binary('Imagen sello tapa prensa 2')
-    img_2_3=fields.Binary('Imagen sello tapa prensa 3')
-    select_2_1 = fields.Selection(string='sello tapa prensa 1', 
-                    selection=[('1', 'Se reaiiza pulido y lavada de Tapa prensa'), 
-                    ('2', 'Se realiza instalacion de sellos a tapa prensa'),
-                    ('3', 'Se recupera pista de sello vastago a tapa prensa'),
-                    ('4', 'Se instala sellos k17 a tapa prensa'),
-                    ('5', 'Se recuperan hilos de tapa prensa'),
-                    ('6', 'Se fabrica tapa prensa según muestra'),
-                    ('7', 'Se fabrica tapa prensa según plano'),
-                    ])
-    select_2_2 = fields.Selection(string='sello tapa prensa 2', 
-                    selection=[('1', 'Se reaiiza pulido y lavada de Tapa prensa'), 
-                    ('2', 'Se realiza instalacion de sellos a tapa prensa'),
-                    ('3', 'Se recupera pista de sello vastago a tapa prensa'),
-                    ('4', 'Se instala sellos k17 a tapa prensa'),
-                    ('5', 'Se recuperan hilos de tapa prensa'),
-                    ('6', 'Se fabrica tapa prensa según muestra'),
-                    ('7', 'Se fabrica tapa prensa según plano'),
-                    ])
-    select_2_3 = fields.Selection(string='sello tapa prensa 3', 
-                    selection=[('1', 'Se reaiiza pulido y lavada de Tapa prensa'), 
-                    ('2', 'Se realiza instalacion de sellos a tapa prensa'),
-                    ('3', 'Se recupera pista de sello vastago a tapa prensa'),
-                    ('4', 'Se instala sellos k17 a tapa prensa'),
-                    ('5', 'Se recuperan hilos de tapa prensa'),
-                    ('6', 'Se fabrica tapa prensa según muestra'),
-                    ('7', 'Se fabrica tapa prensa según plano'),
-                    ])
-    img_3_1=fields.Binary('Imagen sello pistón 1')
-    img_3_2=fields.Binary('Imagen sello pistón 2')
-    img_3_3=fields.Binary('Imagen sello pistón 3')
-    select_3_1 = fields.Selection(string='Sello pistón 1', 
-                    selection=[('1', 'Se reaiiza pulido y lavada de piston'), 
-                    ('2', 'Se realiza instalacion de sellos a piston'),
-                    ('3', 'Se recupera pista diametro exterior de piston'),
-                    ('5', 'Se recuperan hilos diametro interior de piston'),
-                    ('5', 'Se recuperan hilos de tapa prensa'),
-                    ('6', 'Se fabrica piston según muestra'),
-                    ('7', 'Se fabrica piston según plano'),
-                    ])
-    select_3_2 = fields.Selection(string='Sello pistón 2', 
-                    selection=[('1', 'Se reaiiza pulido y lavada de piston'), 
-                    ('2', 'Se realiza instalacion de sellos a piston'),
-                    ('3', 'Se recupera pista diametro exterior de piston'),
-                    ('5', 'Se recuperan hilos diametro interior de piston'),
-                    ('5', 'Se recuperan hilos de tapa prensa'),
-                    ('6', 'Se fabrica piston según muestra'),
-                    ('7', 'Se fabrica piston según plano'),
-                    ])
-    select_3_3 = fields.Selection(string='Sello pistón 3', 
-                    selection=[('1', 'Se reaiiza pulido y lavada de piston'), 
-                    ('2', 'Se realiza instalacion de sellos a piston'),
-                    ('3', 'Se recupera pista diametro exterior de piston'),
-                    ('5', 'Se recuperan hilos diametro interior de piston'),
-                    ('5', 'Se recuperan hilos de tapa prensa'),
-                    ('6', 'Se fabrica piston según muestra'),
-                    ('7', 'Se fabrica piston según plano'),
-                    ])
-    img_4_1=fields.Binary('Fotografia 1 Instalacion prensa piston')
-    img_4_2=fields.Binary('Fotografia 2 Armado de Cilindro')
-    img_4_3=fields.Binary('Fotografia 3 Torque de perno')
-    
-    img_5_1=fields.Binary('Fotografia 1 Instalacion manguera y recorrido de vastago')
-
-    img_6_1=fields.Binary('Fotografia 1 con manemetro indicado presion maxima')
-    txt_6_1 = fields.Text(string='Texto Presión interna área base prensa  de cilindro')
-    
-    img_7_1=fields.Binary('Presión interna área base pistón de cilindro.')
-    txt_7_1 = fields.Text(string='Texto Presión interna área base pistón de cilindro.')
-
-    img_8_1=fields.Binary('Imagen presión en cilindro junto a reloj comparador')
-    txt_8_1 = fields.Text(string='Texto Imagen presión en cilindro junto a reloj comparador')
-
-    img_9_1=fields.Binary('Cierre de proceso')
-    txt_9_1 = fields.Text(string='Texto Cierre de proceso')
-
-    conclusion = fields.Text(string='Conclusión')
 
 
     
@@ -276,6 +166,18 @@ class AccionZoomInteriorBotella(models.Model):
 
     name = fields.Char('Nombre Acción Realizar Rotulo/Buje')
 
+class AccionRealizarBujeRotula(models.Model):
+    _name = 'method_hidropower.accion_realizar_buje_rotula'
+    _description = 'Acción a realizar con buje/rotula'
+
+    name = fields.Char('Nombre Acción Realizar Buje/Rotula')
+
+    # select_5_5 = fields.Selection(string='Acción a realizar con buje/rotula', 
+    #                                         selection=[('sin_intervencion', 'Sin intervención'), 
+    #                                         ('fabricar', 'Fabricar buje (+B2)'),
+    #                                         ('pulido', 'Pulido de buje'),
+    #                                         ('cambio', 'Cambio de rotula'),
+    #                                         ])
 
 class InformeEntrada(models.Model):
     _name = 'method_hidropower.informe_entrada'
@@ -355,20 +257,21 @@ class InformeEntrada(models.Model):
     img_anclaje_botella_2 = fields.Binary('Anclaje de botella 2')
     img_anclaje_botella_3 = fields.Binary('Anclaje de botella 3')
     select_5_1 = fields.One2many('method_hidropower.estado_anclaje_botella', 'informe_entrada_id', string='Estado Anclaje Botella')
-    select_5_2 = fields.One2many('method_hidropower.accion_anclaje_botella', 'informe_entrada_id', string='Acción realizar botella')
-    select_5_3 = fields.Selection(string='Estado Buje/Rotula', 
+    select_5_2 = fields.One2many('method_hidropower.accion_anclaje_botella', 'informe_entrada_id', string='Acción realizar Anclaje Botella')
+    select_5_3 = fields.Selection(string='Buje/Rotula', 
                                             selection=[('buje', 'El Anclaje del vástago viene con buje'), 
                                             ('rotula', 'El Anclaje del vástago viene con rotula'),
                                             ('no_trae', 'El Anclaje del vástago viene sin buje/rotula'),
                                             ('na', 'N/A'),
                                             ])                                            
-    select_5_4 = fields.One2many('method_hidropower.estado_buje_rotula', 'informe_entrada_id', string='Acción Anclaje Botella')
-    select_5_5 = fields.Selection(string='Acción a realizar con buje/rotula', 
-                                            selection=[('sin_intervencion', 'Sin intervención'), 
-                                            ('fabricar', 'Fabricar buje (+B2)'),
-                                            ('pulido', 'Pulido de buje'),
-                                            ('cambio', 'Cambio de rotula'),
-                                            ])
+    select_5_4 = fields.One2many('method_hidropower.estado_buje_rotula', 'informe_entrada_id', string='Estado Buje/Rótula')
+    # select_5_5 = fields.Selection(string='Acción a realizar con buje/rotula', 
+    #                                         selection=[('sin_intervencion', 'Sin intervención'), 
+    #                                         ('fabricar', 'Fabricar buje (+B2)'),
+    #                                         ('pulido', 'Pulido de buje'),
+    #                                         ('cambio', 'Cambio de rotula'),
+    #                                         ])
+    select_5_5 = fields.Many2one('method_hidropower.accion_realizar_buje_rotula', string='Acción Realizar Buje/Rotula')
     select_5_6 = fields.Selection(string='Material de buje', 
                                             selection=[('bronce', 'Bronce'), 
                                             ('acero', 'Acero'),
@@ -385,7 +288,7 @@ class InformeEntrada(models.Model):
     img_piston_2 = fields.Binary('Vista general pistón 2')
     img_piston_3 = fields.Binary('Vista general pistón 3')
     select_7_1 = fields.One2many('method_hidropower.condicion_piston', 'informe_entrada_id', string='Condición Pistón')    
-    select_7_2 = fields.One2many('method_hidropower.accion_piston', 'informe_entrada_id', string='Condición Pistón')
+    select_7_2 = fields.One2many('method_hidropower.accion_piston', 'informe_entrada_id', string='Acción realizar pistón')
     select_7_3 = fields.Text('7.3 Texto fijo')
 
     img_otros_1 = fields.Binary('Imagen 1')
