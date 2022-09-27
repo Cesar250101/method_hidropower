@@ -69,21 +69,17 @@
                         <page name="install_sellos_tapa" string="Instalación de sellos Tapa o Prensa.">
                             <group name="install_sellos_tapa" string="Instalación de sellos Tapa o Prensa.">
                                 <field name="img_2_1"/>
-                                <field name="select_2_1"/>
-                                <field name="img_2_2"/>
-                                <field name="select_2_2"/>
-                                <field name="img_2_3"/>
-                                <field name="select_2_3"/>
+                                <field name="img_2_2"/>   
+                                <field name="img_2_3"/>                             
+                                <field name="sello_tapa_prensa_ids" widget="many2many_tags"/>
                             </group>                            
                         </page>
-                        <page name="name" string="string">
+                        <page name="name" string="Instalación Sellos Pistón">
                             <group name="sellos_piston" string="Instalación de sellos Pistón.">
                                 <field name="img_3_1"/>
-                                <field name="select_3_1"/>
                                 <field name="img_3_2"/>
-                                <field name="select_3_2"/>                  
                                 <field name="img_3_3"/>
-                                <field name="select_3_3"/>                  
+                                <field name="sello_piston_ids" widget="many2many_tags"/>                  
                             </group>                            
                         </page>
                         <page name="ensamble_equipo" string="Ensamble de equipo.">
@@ -124,7 +120,7 @@
                         </page>
                         <page name="obs" string="Conclusiones">
                             <group name="obs" string="Conclusiones">
-                                <field name="conclusion"/>  
+                                <field name="conclucion_ids"  widget="many2many_tags"/>  
                             </group>                            
                         </page>
                     </notebook>                    
@@ -149,9 +145,61 @@
         </field>
         </record>
 
+        <!--method_hidropower.sello_tapa_prensa_1-->
+        <record id="method_hidropower.sello_tapa_prensa_1_action_window" model="ir.actions.act_window">
+        <field name="name">Sello tapa prensa</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">method_hidropower.sello_tapa_prensa_1</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_type">form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+            <!-- Add Text Here -->
+            </p><p>
+            <!-- More details about what a user can do with this object will be OK --> 
+            </p>
+        </field>
+        </record>
+
+    <!--method_hidropower.model_method_hidropower_sello_piston-->
+        <record id="method_hidropower.sello_piston_action_window" model="ir.actions.act_window">
+        <field name="name">Sello Pistón</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">method_hidropower.sello_piston</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_type">form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+            <!-- Add Text Here -->
+            </p><p>
+            <!-- More details about what a user can do with this object will be OK --> 
+            </p>
+        </field>
+        </record>
+
+    <!--method_hidropower.model_method_hidropower_concluciones-->
+        <record id="method_hidropower.informe_salida_conclucion_action_window" model="ir.actions.act_window">
+        <field name="name">Concluciones Informe Salida</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">method_hidropower.concluciones</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_type">form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+            <!-- Add Text Here -->
+            </p><p>
+            <!-- More details about what a user can do with this object will be OK --> 
+            </p>
+        </field>
+        </record>
+
 
         <menuitem id="method_hidropower.informe_salida_menu_act" name="Informe de Salida" parent="method_hidropower_informe_entrada_menu" action="method_hidropower.informe_salida_action" sequence="1"/>
         <menuitem id="method_hidropower_maestros_menu_informe_salida" name="Parámetros Informe Salida" parent="repair.menu_repair_order" sequence="1"/>    
         <menuitem id="method_hidropower.otros_servicios" name="Otros Servicios" parent="method_hidropower_maestros_menu_informe_salida" action="method_hidropower.otros_servicios_action" sequence="1"/>
+        <menuitem id="method_hidropower.sello_tapa_prensa_1_menu" name="Sello Tapa Prensa" parent="method_hidropower_maestros_menu_informe_salida" action="method_hidropower.sello_tapa_prensa_1_action_window" sequence="1"/>
+        <menuitem id="method_hidropower.sello_piston_menu" name="Sello Pistón" parent="method_hidropower_maestros_menu_informe_salida" action="method_hidropower.sello_piston_action_window" sequence="1"/>
+        <menuitem id="method_hidropower.informe_salida_conclucion_menu" name="Concluciónes Informe Salida" parent="method_hidropower_maestros_menu_informe_salida" action="method_hidropower.informe_salida_conclucion_action_window" sequence="1"/>
+
     </data>
 </odoo>

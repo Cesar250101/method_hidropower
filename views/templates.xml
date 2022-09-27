@@ -1,14 +1,12 @@
 <odoo>
     <data>
-
+<!--Informe de Salida-->
         <report id="method_hidropower.informe_salida"
         string="Informe de Salida"
         model="method_hidropower.informe_salida"
         report_type="qweb-html"
         name="method_hidropower.report_informe_salida"
         />
-
-        
 
         <template id="report_informe_salida">
             <style>
@@ -92,7 +90,7 @@
                             <div class="row caja">
                                 <span><strong>Otros : </strong></span>                                
                                 <ul>
-                                    <t t-foreach="o.otros" t-as="l">                                
+                                    <t t-foreach="o.otros_servicios" t-as="l">                                
                                         <li><span t-field="l.name" />></li>
                                     </t>
                                 </ul>                                    
@@ -100,15 +98,15 @@
                             <br></br>
                             <table style="width:90%">
                                 <tr>
-                                    <th>Fotografía</th>
-                                    <th>Descripción</th>
+                                    <th width="60%">Fotografía</th>
+                                    <th width="40%" valign="top">Descripción</th>
                                 </tr>
                                 <tr>
                                     <td>
                                         <span><strong>1. Postura de Sellos</strong></span><br></br>
-                                        <img t-if="o.img_1" t-att-src="'data:image/png;base64,%s' % to_text(o.img_1)" style="max-height: 150px;max-width: 150px;"/>
+                                        <img t-if="o.img_1" t-att-src="'data:image/png;base64,%s' % to_text(o.img_1)" width="400px" height="300"/>
                                     </td>
-                                    <td>
+                                    <td valign="top">
                                         <p class="text-justify">
                                             Kit de Sellos nuevo cumple todas las exigencias para su correcto funcionamiento según especificacion del fabricante.
                                         </p>
@@ -117,35 +115,39 @@
                                 <tr>
                                     <td>
                                         <span><strong>2. Instalación de sellos Tapas o Prensa</strong></span><br></br>
-                                        <img t-if="o.img_2_1" t-att-src="'data:image/png;base64,%s' % to_text(o.img_2_1)" style="max-height: 150px;max-width: 150px;"/><br></br>
-                                        <img t-if="o.img_2_2" t-att-src="'data:image/png;base64,%s' % to_text(o.img_2_1)" style="max-height: 150px;max-width: 150px;"/><br></br>
-                                        <img t-if="o.img_2_3" t-att-src="'data:image/png;base64,%s' % to_text(o.img_2_1)" style="max-height: 150px;max-width: 150px;"/>
+                                        <img t-if="o.img_2_1" t-att-src="'data:image/png;base64,%s' % to_text(o.img_2_1)" width="400px" height="300"/><br></br>
+                                        <img t-if="o.img_2_2" t-att-src="'data:image/png;base64,%s' % to_text(o.img_2_2)" width="400px" height="300"/><br></br>
+                                        <img t-if="o.img_2_3" t-att-src="'data:image/png;base64,%s' % to_text(o.img_2_3)" width="400px" height="300"/>
                                     </td>
-                                    <td>
-                                        <span t-field="o.select_2_1" /><br></br>
-                                        <span t-field="o.select_2_2" /><br></br>
-                                        <span t-field="o.select_2_3" /><br></br>
+                                    <td valign="top">
+                                        <ul>
+                                            <t t-foreach="o.sello_tapa_prensa_ids" t-as="l">                                
+                                                <li><span t-field="l.name" /></li>
+                                            </t>
+                                        </ul>                                        
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
                                         <span><strong>3. Instalación de sellos Pistón.</strong></span><br></br>
-                                        <img t-if="o.img_3_1" t-att-src="'data:image/png;base64,%s' % to_text(o.img_3_1)" style="max-height: 150px;max-width: 150px;"/><br></br>
-                                        <img t-if="o.img_3_2" t-att-src="'data:image/png;base64,%s' % to_text(o.img_3_1)" style="max-height: 150px;max-width: 150px;"/><br></br>
-                                        <img t-if="o.img_3_3" t-att-src="'data:image/png;base64,%s' % to_text(o.img_3_1)" style="max-height: 150px;max-width: 150px;"/>
+                                        <img t-if="o.img_3_1" t-att-src="'data:image/png;base64,%s' % to_text(o.img_3_1)" width="400px" height="300"/><br></br>
+                                        <img t-if="o.img_3_2" t-att-src="'data:image/png;base64,%s' % to_text(o.img_3_1)" width="400px" height="300"/><br></br>
+                                        <img t-if="o.img_3_3" t-att-src="'data:image/png;base64,%s' % to_text(o.img_3_1)" width="400px" height="300"/>
                                     </td>
-                                    <td>
-                                        <span></span><span t-field="o.select_3_1" /><br></br>
-                                        <span></span><span t-field="o.select_3_2" /><br></br>
-                                        <span></span><span t-field="o.select_3_3" />
+                                    <td valign="top">
+                                        <ul>
+                                            <t t-foreach="o.sello_piston_ids" t-as="l">                                
+                                                <li><span t-field="l.name" /></li>
+                                            </t>
+                                        </ul>   
                                     </td>
                                 </tr>                            
                                 <tr>
                                     <td>
                                         <span><strong>4. Ensamble de equipo.</strong></span><br></br>
-                                        <img t-if="o.img_4_1" t-att-src="'data:image/png;base64,%s' % to_text(o.img_4_1)" style="max-height: 150px;max-width: 150px;"/><br></br>
-                                        <img t-if="o.img_4_2" t-att-src="'data:image/png;base64,%s' % to_text(o.img_4_1)" style="max-height: 150px;max-width: 150px;"/><br></br>
-                                        <img t-if="o.img_4_3" t-att-src="'data:image/png;base64,%s' % to_text(o.img_4_1)" style="max-height: 150px;max-width: 150px;"/>
+                                        <img t-if="o.img_4_1" t-att-src="'data:image/png;base64,%s' % to_text(o.img_4_1)" width="400px" height="300"/><br></br>
+                                        <img t-if="o.img_4_2" t-att-src="'data:image/png;base64,%s' % to_text(o.img_4_1)" width="400px" height="300"/><br></br>
+                                        <img t-if="o.img_4_3" t-att-src="'data:image/png;base64,%s' % to_text(o.img_4_1)" width="400px" height="300"/>
                                     </td>
                                     <td>
                                     </td>
@@ -153,9 +155,9 @@
                                 <tr>
                                     <td>
                                         <span><strong>5. Prueba de llenado de aceite y recorrido de vástago.</strong></span><br></br>
-                                        <img t-if="o.img_5_1" t-att-src="'data:image/png;base64,%s' % to_text(o.img_5_1)" style="max-height: 150px;max-width: 150px;"/>
+                                        <img t-if="o.img_5_1" t-att-src="'data:image/png;base64,%s' % to_text(o.img_5_1)" width="400px" height="300"/>
                                     </td>
-                                    <td>
+                                    <td valign="top">
                                         <p class="text-justify">
                                             Se realiza recorrido de vastago con aceite hidraulico SAE 68, el equipo no presenta fuga en su recorrido.
                                             Equipo no  presenta variacion de presion
@@ -165,52 +167,66 @@
                                 <tr>
                                     <td>
                                         <span><strong>6. Presión interna área base prensa de cilindro.</strong></span><br></br>
-                                        <img t-if="o.img_6_1" t-att-src="'data:image/png;base64,%s' % to_text(o.img_6_1)" style="max-height: 150px;max-width: 150px;"/>
+                                        <img t-if="o.img_6_1" t-att-src="'data:image/png;base64,%s' % to_text(o.img_6_1)" width="400px" height="300"/>
                                     </td>
-                                    <td>
+                                    <td valign="top">
                                         <span>Presion interna area base prensa de cilindro <span t-field="o.presion_max"/> PSI.</span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
                                         <span><strong>7. Presión interna área base pistón de cilindro.</strong></span><br></br>
-                                        <img t-if="o.img_7_1" t-att-src="'data:image/png;base64,%s' % to_text(o.img_7_1)" style="max-height: 150px;max-width: 150px;"/>
+                                        <img t-if="o.img_7_1" t-att-src="'data:image/png;base64,%s' % to_text(o.img_7_1)" width="400px" height="300"/>
                                     </td>
-                                    <td>
+                                    <td valign="top">
                                         <span>Presion interna area base prensa de cilindro <span t-field="o.presion_max"/> PSI.</span>
                                     </td>
                                 </tr>                            
                                 <tr>
                                     <td>
                                         <span><strong>8. Imagen presión en cilindro junto a reloj comparador</strong></span><br></br>                                    
-                                        <img t-if="o.img_8_1" t-att-src="'data:image/png;base64,%s' % to_text(o.img_8_1)" style="max-height: 150px;max-width: 150px;"/>
+                                        <img t-if="o.img_8_1" t-att-src="'data:image/png;base64,%s' % to_text(o.img_8_1)" width="400px" height="300"/>
                                     </td>
-                                    <td>
+                                    <td valign="top">
                                         <span t-field="o.txt_8_1"/>
                                     </td>
                                 </tr>                            
                                 <tr>
                                     <td>
                                         <span><strong>9. Cierre de proceso.</strong></span><br></br>                                    
-                                        <img t-if="o.img_9_1" t-att-src="'data:image/png;base64,%s' % to_text(o.img_9_1)" style="max-height: 150px;max-width: 150px;"/>
+                                        <img t-if="o.img_9_1" t-att-src="'data:image/png;base64,%s' % to_text(o.img_9_1)" width="400px" height="300"/>
                                     </td>
-                                    <td>
+                                    <td valign="top">
                                         <span t-field="o.txt_9_1"/>
+                                    </td>
+                                </tr>                            
+                                <tr>
+                                    <td>
+                                        <span><strong>10. Fotografia  graficos test senso node parker</strong></span><br></br>                                    
+                                        <img t-if="o.img_10_1" t-att-src="'data:image/png;base64,%s' % to_text(o.img_9_1)" width="400px" height="300"/>
+                                    </td>
+                                    <td valign="top">
+                                        <span t-field="o.txt_10_1"/>
                                     </td>
                                 </tr>                            
 
                             </table>  
                         <br></br>      
-                        <p class="text-justify">
-                            <strong>Conclusión: </strong><t t-esc="o.conclusion"/>
-                        </p>
-                        <br></br>
+                        <div class="row" valign="top">
+                            <span><strong>CONCLUCIÓN:</strong></span>
+                            <ul>
+                                <t t-foreach="o.conclucion_ids" t-as="l">                                
+                                    <li><span t-field="l.name" /></li>
+                                </t>
+                            </ul>                           
+                        </div>
                         </div>
                     </t>
                 </t>
             </t>
         </template>
 
+<!--Informe de Entrada-->
         <report id="method_hidropower.informe_entrada"
         string="Informe de Entrada"
         model="method_hidropower.informe_entrada"

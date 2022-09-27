@@ -22,3 +22,7 @@ accion_zoom_interior_botella,Acción Zoom Botella,method_hidropower.model_method
 accion_interior_botella,Acción Interior Botella,method_hidropower.model_method_hidropower_accion_interior_botella,mrp.group_mrp_manager,1,1,1,1
 informe_salida_otros_servicios,Otros servicios,method_hidropower.model_method_hidropower_otros,mrp.group_mrp_manager,1,1,1,1
 informe_entrada_accion_buje_rotula,Acción Realizar Buje/Rotula,method_hidropower.model_method_hidropower_accion_realizar_buje_rotula,mrp.group_mrp_manager,1,1,1,1
+informe_salida_sello_tapa_prensa_1,Sello Tapa Prensa 1,method_hidropower.model_method_hidropower_sello_tapa_prensa_1,mrp.group_mrp_manager,1,1,1,1
+informe_salida_sello_pistoj,Sello Pistón,method_hidropower.model_method_hidropower_sello_piston,mrp.group_mrp_manager,1,1,1,1
+informe_salida_conclucioens,Concluciones informe de salida,method_hidropower.model_method_hidropower_concluciones,mrp.group_mrp_manager,1,1,1,1
+
