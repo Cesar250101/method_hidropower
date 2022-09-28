@@ -53,7 +53,7 @@
                                     </tr>                                    
                                     <tr>
                                         <td>N° de Parte Interno HP</td>
-                                        <td><span t-field="o.mecanico" /></td>
+                                        <td><span t-field="o.repair_order_id" /></td>
                                         <td>Presión Utilizada</td>
                                         <td><span t-field="o.presion_util" /></td>
                                     </tr>                                    

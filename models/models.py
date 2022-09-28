@@ -2,6 +2,36 @@
 
 from odoo import models, fields, api
 
+class NotaVenta(models.Model):
+    _inherit = 'sale.order'
+
+    repair_order_id = fields.Many2one('repair.order', string='Orden de Repración')
+    repair_order_state = fields.Selection([
+                                            ('draft', 'Quotation'),
+                                            ('cancel', 'Cancelled'),
+                                            ('confirmed', 'Confirmed'),
+                                            ('under_repair', 'Under Repair'),
+                                            ('ready', 'Ready to Repair'),
+                                            ('2binvoiced', 'To be Invoiced'),
+                                            ('invoice_except', 'Invoice Exception'),
+                                            ('done', 'Repaired')], string='Estado RMA',
+                                            related='repair_order_id.state')
+
+
+class ReparacionCompras(models.Model):
+    _inherit = 'repair.order'
+
+    sale_order_id = fields.Many2one('sale.order', string='Nota de Venta',required=True)
+
+    @api.multi
+    def action_validate(self):
+        if self.operations:
+            value={
+                'repair_order_id':self.id
+            }
+            self.sale_order_id.write(value)
+        return super(ReparacionCompras, self).action_validate()            
+
 
 class ModuleName(models.Model):
     _inherit = 'repair.order'

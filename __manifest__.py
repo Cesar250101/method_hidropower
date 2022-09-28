@@ -26,8 +26,10 @@
     'data': [
         'security/ir.model.access.csv',
         'views/views.xml',
+        'views/repair_order.xml',
         'views/templates.xml',
         'views/informe_salida.xml',
+
         #'data/actions.xml'
     ],
     # only loaded in demonstration mode
