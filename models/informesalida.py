@@ -24,6 +24,21 @@ class SelloPiston(models.Model):
     name = fields.Char(string='Nombre')
     informe_salida_id = fields.Many2one(comodel_name='method_hidropower.informe_salida', string='Informe de Salida')
 
+class ReemplazoRotula(models.Model):
+    _name = 'method_hidropower.reemplazo_rotula'
+    _description = 'Reemplazo de rótulas'
+
+    name = fields.Char(string='Nombre')
+    informe_salida_id = fields.Many2one(comodel_name='method_hidropower.informe_salida', string='Informe de Salida')
+
+class FabricacionPiezas(models.Model):
+    _name = 'method_hidropower.fabricacion_piezas'
+    _description = 'Fabricación Piezas'
+
+    name = fields.Char(string='Nombre')
+    informe_salida_id = fields.Many2one(comodel_name='method_hidropower.informe_salida', string='Informe de Salida')
+
+
 class SelloPiston(models.Model):
     _name = 'method_hidropower.concluciones'
     _description = 'Informe de Salida - Concluciones'
@@ -58,23 +73,27 @@ class InformeSalida(models.Model):
     img_2_1=fields.Binary('Imagen sello tapa prensa 1')
     img_2_2=fields.Binary('Imagen sello tapa prensa 2')
     img_2_3=fields.Binary('Imagen sello tapa prensa 3')
-
     sello_tapa_prensa_ids = fields.One2many('method_hidropower.sello_tapa_prensa_1', 'informe_salida_id', string='Sello Tapa Prensa 1')
+
     img_3_1=fields.Binary('Imagen sello pistón 1')
     img_3_2=fields.Binary('Imagen sello pistón 2')
-    img_3_3=fields.Binary('Imagen sello pistón 3')
-
-    
+    img_3_3=fields.Binary('Imagen sello pistón 3')    
     sello_piston_ids = fields.One2many('method_hidropower.sello_piston', 'informe_salida_id', string='Sello Pistón')
-    # sello_piston_ids= fields.Selection(string='Sello pistón 1', 
-    #                 selection=[('1', 'Se reaiiza pulido y lavada de piston'), 
-    #                 ('2', 'Se realiza instalacion de sellos a piston'),
-    #                 ('3', 'Se recupera pista diametro exterior de piston'),
-    #                 ('5', 'Se recuperan hilos diametro interior de piston'),
-    #                 ('5', 'Se recuperan hilos de tapa prensa'),
-    #                 ('6', 'Se fabrica piston según muestra'),
-    #                 ('7', 'Se fabrica piston según plano'),
-    #                 ])
+
+    img_reemplazo_rotula_1 = fields.Binary('Imagen reemplazo rótula 1')
+    img_reemplazo_rotula_2 = fields.Binary('Imagen reemplazo rótula 2')
+    img_reemplazo_rotula_3 = fields.Binary('Imagen reemplazo rótula 3')
+    reemplazo_rotula_ids = fields.One2many('method_hidropower.reemplazo_rotula', 'informe_salida_id', string='Reemplazo Rótula')
+
+    img_fabricacion_piezas_1 = fields.Binary('Imagen reemplazo rótula 1')
+    img_fabricacion_piezas_2 = fields.Binary('Imagen reemplazo rótula 2')
+    img_fabricacion_piezas_3 = fields.Binary('Imagen reemplazo rótula 3')
+    img_fabricacion_piezas_4 = fields.Binary('Imagen reemplazo rótula 4')
+    img_fabricacion_piezas_5 = fields.Binary('Imagen reemplazo rótula 5')
+    img_fabricacion_piezas_6 = fields.Binary('Imagen reemplazo rótula 6')
+    fabricacion_piezas_ids = fields.One2many('method_hidropower.fabricacion_piezas', 'informe_salida_id', string='Fabricación Piezas')
+
+
     img_4_1=fields.Binary('Fotografia 1 Instalacion prensa piston')
     img_4_2=fields.Binary('Fotografia 2 Armado de Cilindro')
     img_4_3=fields.Binary('Fotografia 3 Torque de perno')
@@ -86,6 +105,10 @@ class InformeSalida(models.Model):
     
     img_7_1=fields.Binary('Presión interna área base pistón de cilindro.')
     txt_7_1 = fields.Text(string='Texto Presión interna área base pistón de cilindro.')
+
+    img_presion_cilindro = fields.Binary('Presión en Cilindro')
+    txt_presion_cilindro = fields.Text(string='Texto Presión interna área base pistón de cilindro.',
+                                        default='Cilindro NO presenta fuga de aceite')
 
     img_8_1=fields.Binary('Imagen presión en cilindro junto a reloj comparador')
     txt_8_1 = fields.Text(string='Texto Imagen presión en cilindro junto a reloj comparador',

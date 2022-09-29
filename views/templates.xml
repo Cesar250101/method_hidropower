@@ -144,6 +144,40 @@
                                 </tr>                            
                                 <tr>
                                     <td>
+                                        <span><strong>Reemplazo de Rótulas.</strong></span><br></br>
+                                        <img t-if="o.img_reemplazo_rotula_1" t-att-src="'data:image/png;base64,%s' % to_text(o.img_reemplazo_rotula_1)" width="400px" height="300"/><br></br>
+                                        <img t-if="o.img_reemplazo_rotula_2" t-att-src="'data:image/png;base64,%s' % to_text(o.img_reemplazo_rotula_2)" width="400px" height="300"/><br></br>
+                                        <img t-if="o.img_reemplazo_rotula_3" t-att-src="'data:image/png;base64,%s' % to_text(o.img_reemplazo_rotula_3)" width="400px" height="300"/>
+                                    </td>
+                                    <td valign="top">
+                                        <ul>
+                                            <t t-foreach="o.reemplazo_rotula_ids" t-as="l">                                
+                                                <li><span t-field="l.name" /></li>
+                                            </t>
+                                        </ul>   
+                                    </td>
+                                </tr>                            
+                                <tr>
+                                    <td>
+                                        <span><strong>Fabricación Piezas.</strong></span><br></br>
+                                        <img t-if="o.img_fabricacion_piezas_1" t-att-src="'data:image/png;base64,%s' % to_text(o.img_fabricacion_piezas_1)" width="400px" height="300"/><br></br>
+                                        <img t-if="o.img_fabricacion_piezas_2" t-att-src="'data:image/png;base64,%s' % to_text(o.img_fabricacion_piezas_2)" width="400px" height="300"/><br></br>
+                                        <img t-if="o.img_fabricacion_piezas_3" t-att-src="'data:image/png;base64,%s' % to_text(o.img_fabricacion_piezas_3)" width="400px" height="300"/>
+                                        <img t-if="o.img_fabricacion_piezas_4" t-att-src="'data:image/png;base64,%s' % to_text(o.img_fabricacion_piezas_4)" width="400px" height="300"/>
+                                        <img t-if="o.img_fabricacion_piezas_5" t-att-src="'data:image/png;base64,%s' % to_text(o.img_fabricacion_piezas_5)" width="400px" height="300"/>
+                                        <img t-if="o.img_fabricacion_piezas_6" t-att-src="'data:image/png;base64,%s' % to_text(o.img_fabricacion_piezas_6)" width="400px" height="300"/>
+                                    </td>
+                                    <td valign="top">
+                                        <ul>
+                                            <t t-foreach="o.fabricacion_piezas_ids" t-as="l">                                
+                                                <li><span t-field="l.name" /></li>
+                                            </t>
+                                        </ul>   
+                                    </td>
+                                </tr>                            
+
+                                <tr>
+                                    <td>
                                         <span><strong>4. Ensamble de equipo.</strong></span><br></br>
                                         <img t-if="o.img_4_1" t-att-src="'data:image/png;base64,%s' % to_text(o.img_4_1)" width="400px" height="300"/><br></br>
                                         <img t-if="o.img_4_2" t-att-src="'data:image/png;base64,%s' % to_text(o.img_4_1)" width="400px" height="300"/><br></br>
@@ -184,7 +218,17 @@
                                 </tr>                            
                                 <tr>
                                     <td>
-                                        <span><strong>8. Imagen presión en cilindro junto a reloj comparador</strong></span><br></br>                                    
+                                        <span><strong>8. Presión en cilindro.</strong></span><br></br>
+                                        <img t-if="o.img_presion_cilindro" t-att-src="'data:image/png;base64,%s' % to_text(o.img_presion_cilindro)" width="400px" height="300"/>
+                                    </td>
+                                    <td valign="top">
+                                        <span>Cilindro NO presenta fuga de aceite</span>
+                                    </td>
+                                </tr>                            
+
+                                <tr>
+                                    <td>
+                                        <span><strong>9. Imagen presión en cilindro junto a reloj comparador</strong></span><br></br>                                    
                                         <img t-if="o.img_8_1" t-att-src="'data:image/png;base64,%s' % to_text(o.img_8_1)" width="400px" height="300"/>
                                     </td>
                                     <td valign="top">
@@ -193,7 +237,7 @@
                                 </tr>                            
                                 <tr>
                                     <td>
-                                        <span><strong>9. Cierre de proceso.</strong></span><br></br>                                    
+                                        <span><strong>10. Cierre de proceso.</strong></span><br></br>                                    
                                         <img t-if="o.img_9_1" t-att-src="'data:image/png;base64,%s' % to_text(o.img_9_1)" width="400px" height="300"/>
                                     </td>
                                     <td valign="top">
@@ -202,7 +246,7 @@
                                 </tr>                            
                                 <tr>
                                     <td>
-                                        <span><strong>10. Fotografia  graficos test senso node parker</strong></span><br></br>                                    
+                                        <span><strong>11. Fotografia  graficos test senso node parker</strong></span><br></br>                                    
                                         <img t-if="o.img_10_1" t-att-src="'data:image/png;base64,%s' % to_text(o.img_9_1)" width="400px" height="300"/>
                                     </td>
                                     <td valign="top">

@@ -82,6 +82,26 @@
                                 <field name="sello_piston_ids" widget="many2many_tags"/>                  
                             </group>                            
                         </page>
+                        <page name="reeplazo_rotulas" string="Reemplazo de Rótulas">
+                            <group name="reeplazo_rotulas" string="Reemplazo de Rótulas">
+                                <field name="img_reemplazo_rotula_1"/>
+                                <field name="img_reemplazo_rotula_2"/>
+                                <field name="img_reemplazo_rotula_3"/>
+                                <field name="reemplazo_rotula_ids" widget="many2many_tags"/>                  
+                            </group>                            
+                        </page>
+                        <page name="fabricacion_´piezas" string="Fabricación Piezas">
+                            <group name="fabricacion_´piezas" string="Fabricación Piezas">
+                                <field name="img_fabricacion_piezas_1"/>
+                                <field name="img_fabricacion_piezas_2"/>
+                                <field name="img_fabricacion_piezas_3"/>
+                                <field name="img_fabricacion_piezas_4"/>
+                                <field name="img_fabricacion_piezas_5"/>
+                                <field name="img_fabricacion_piezas_6"/>
+                                <field name="fabricacion_piezas_ids" widget="many2many_tags"/>                  
+                            </group>                            
+                        </page>
+
                         <page name="ensamble_equipo" string="Ensamble de equipo.">
                             <group name="ensamble_equipo" string="Ensamble de equipo.">
                                 <field name="img_4_1"/>
@@ -106,6 +126,13 @@
                                 <field name="txt_7_1"/>
                             </group>                            
                         </page>
+                        <page name="presion_cilindro" string="Presión en cilindro.">
+                            <group name="presion_cilindro" string="Presión en cilindro.">
+                                <field name="img_presion_cilindro"/>
+                                <field name="txt_presion_cilindro"/>
+                            </group>                            
+                        </page>
+
                         <page name="reloj_comparador" string="Imagen presión en cilindro junto a reloj comparador">
                             <group name="reloj_comparador" string="Imagen presión en cilindro junto a reloj comparador">
                                 <field name="img_8_1"/>
@@ -118,6 +145,13 @@
                                 <field name="txt_9_1"/>
                             </group>                            
                         </page>
+                        <page name="test_senso_node_parker" string="Gráficos tst senso node parker.">
+                            <group name="test_senso_node_parker" string="Gráficos tst senso node parker">
+                                <field name="img_10_1"/>
+                                <field name="txt_10_1"/>
+                            </group>                            
+                        </page>
+
                         <page name="obs" string="Conclusiones">
                             <group name="obs" string="Conclusiones">
                                 <field name="conclucion_ids"  widget="many2many_tags"/>  
@@ -193,6 +227,38 @@
         </field>
         </record>
 
+    <!--Reemplazo Rotulas-->
+        <record id="method_hidropower.informe_salida_reemplazo_rotula_action_window" model="ir.actions.act_window">
+        <field name="name">Reemplazo Rótulas</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">method_hidropower.reemplazo_rotula</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_type">form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+            <!-- Add Text Here -->
+            </p><p>
+            <!-- More details about what a user can do with this object will be OK --> 
+            </p>
+        </field>
+        </record>
+
+    <!--Reemplazo Rotulas-->
+        <record id="method_hidropower.informe_salida_fabricacion_piezas_action_window" model="ir.actions.act_window">
+        <field name="name">Fabricación Piezas</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">method_hidropower.fabricacion_piezas</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_type">form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+            <!-- Add Text Here -->
+            </p><p>
+            <!-- More details about what a user can do with this object will be OK --> 
+            </p>
+        </field>
+        </record>
+
 
         <menuitem id="method_hidropower.informe_salida_menu_act" name="Informe de Salida" parent="method_hidropower_informe_entrada_menu" action="method_hidropower.informe_salida_action" sequence="1"/>
         <menuitem id="method_hidropower_maestros_menu_informe_salida" name="Parámetros Informe Salida" parent="repair.menu_repair_order" sequence="1"/>    
@@ -200,6 +266,7 @@
         <menuitem id="method_hidropower.sello_tapa_prensa_1_menu" name="Sello Tapa Prensa" parent="method_hidropower_maestros_menu_informe_salida" action="method_hidropower.sello_tapa_prensa_1_action_window" sequence="1"/>
         <menuitem id="method_hidropower.sello_piston_menu" name="Sello Pistón" parent="method_hidropower_maestros_menu_informe_salida" action="method_hidropower.sello_piston_action_window" sequence="1"/>
         <menuitem id="method_hidropower.informe_salida_conclucion_menu" name="Concluciónes Informe Salida" parent="method_hidropower_maestros_menu_informe_salida" action="method_hidropower.informe_salida_conclucion_action_window" sequence="1"/>
-
+        <menuitem id="method_hidropower.informe_salida_reemplazo_rotula" name="Reemplazo Rótulas" parent="method_hidropower_maestros_menu_informe_salida" action="method_hidropower.informe_salida_reemplazo_rotula_action_window" sequence="1"/>
+        <menuitem id="method_hidropower.informe_salida_fabricacion_piezas" name="Fabricación Piezas" parent="method_hidropower_maestros_menu_informe_salida" action="method_hidropower.informe_salida_fabricacion_piezas_action_window" sequence="1"/>
     </data>
 </odoo>
