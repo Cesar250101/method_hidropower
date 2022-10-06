@@ -21,7 +21,7 @@ class NotaVenta(models.Model):
 class ReparacionCompras(models.Model):
     _inherit = 'repair.order'
 
-    sale_order_id = fields.Many2one('sale.order', string='Nota de Venta',required=True)
+    sale_order_id = fields.Many2one('sale.order', string='Nota de Venta')
 
     @api.multi
     def action_validate(self):
