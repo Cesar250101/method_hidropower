@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from email.policy import default
 from odoo import models, fields, api
 
 class NotaVenta(models.Model):
@@ -220,10 +221,14 @@ class InformeEntrada(models.Model):
     contacto = fields.Char(string='Atención a:')    
     referencia = fields.Char(string='Referencia')
     img_cilindro_completo = fields.Binary('Cilindro Completo')
+
+    desarme_mostrar = fields.Boolean('Mostrar en Informe?',default=True)
     img_desarme_1 = fields.Binary('Imagen Desarme 1')
     img_desarme_2 = fields.Binary('Imagen Desarme 2')
     img_desarme_3 = fields.Binary('Imagen Desarme 3')
     txt_desarme = fields.Text(string='Texto Desarme')
+    
+    vastago_mostrar = fields.Boolean('Mostrar en Informe?',default=True)
     img_vastago_1 = fields.Binary('Imagen Vástago 1')
     img_vastago_2 = fields.Binary('Imagen Vástago 2')
     img_vastago_3 = fields.Binary('Imagen Vástago 3')
@@ -231,20 +236,21 @@ class InformeEntrada(models.Model):
     select_2_1_es_otro = fields.Boolean(string='Otro?')
     select_2_1_otros = fields.Char('Especificar')
     select_2_2 = fields.One2many('method_hidropower.accion_vastago','informe_entrada_id' ,string='Acciones Vastago')
-                                                                
+
+    vastago_daño_mostrar = fields.Boolean('Mostrar en Informe?',default=True)                                                                
     img_vastago_daño = fields.Binary('Daño Vástago 1')
     img_vastago_daño_2 = fields.Binary('Daño Vástago 2')
     img_vastago_daño_3 = fields.Binary('Daño Vástago 3')
     img_vastago_daño_4 = fields.Binary('Daño Vástago 4')
     img_vastago_daño_5 = fields.Binary('Daño Vástago 5')
     txt_vastago_daño = fields.Text(string='Daño de vástago')
+
+    anclaje_vastago_mostrar = fields.Boolean('Mostrar en Informe?',default=True)                                                                    
     img_anclaje_vastago = fields.Binary('Anclaje Vástago 1')
     img_anclaje_vastago_2 = fields.Binary('Anclaje Vástago 2')
     img_anclaje_vastago_3 = fields.Binary('Anclaje Vástago 3')
-    
     select_3_1 = fields.One2many('method_hidropower.condicion_anclaje', 'informe_entrada_id', string='Estado Anclaje')
-    select_3_2 = fields.One2many('method_hidropower.accion_anclaje', 'informe_entrada_id', string='Acción Anclaje')
-    
+    select_3_2 = fields.One2many('method_hidropower.accion_anclaje', 'informe_entrada_id', string='Acción Anclaje')    
     select_3_3= fields.Selection(string='Buje/Rotula', 
                                             selection=[('buje', 'El Anclaje del vástago viene con buje'), 
                                             ('rotula', 'El Anclaje del vástago viene con rotula'),
@@ -266,12 +272,14 @@ class InformeEntrada(models.Model):
                                             ('durocoton', 'Durocoton'),
                                             ('technill', 'Technill'),
                                             ])
+    botella_mostrar = fields.Boolean('Mostrar en Informe?',default=True)                                                                                                                    
     img_botella = fields.Binary('Vista general botella') 
     img_botella_2 = fields.Binary('Vista general botella 2')
     img_botella_3 = fields.Binary('Vista general botella 3')  
     select_4_1 = fields.One2many('method_hidropower.estado_botella', 'informe_entrada_id', string='Estado Botella')
     select_4_2 = fields.One2many('method_hidropower.estado_entrada_aceite', 'informe_entrada_id', string='Estado Entrada Aceite')
-                                            
+
+    interior_botella_mostrar = fields.Boolean('Mostrar en Informe?',default=True)                                            
     select_4_3 = fields.One2many('method_hidropower.accion_botella', 'informe_entrada_id', string='Acción Realizar Botella')
     img_interior_botella = fields.Binary('Zoom interior de botella 1')                                            
     img_interior_botella_2 = fields.Binary('Zoom interior de botella 2')                                            
@@ -283,6 +291,8 @@ class InformeEntrada(models.Model):
                                             ('afecta', ' afectan su optimo funcionamiento'),
                                             ])
     select_4_4_C = fields.Many2one('method_hidropower.accion_zoom_botella', string='Acción Realizar Zoom Botella')                                            
+
+    anclaje_botella_mostrar = fields.Boolean('Mostrar en Informe?',default=True)
     img_anclaje_botella = fields.Binary('Anclaje de botella')
     img_anclaje_botella_2 = fields.Binary('Anclaje de botella 2')
     img_anclaje_botella_3 = fields.Binary('Anclaje de botella 3')
@@ -308,12 +318,15 @@ class InformeEntrada(models.Model):
                                             ('durocoton', 'Durocoton'),
                                             ('technill', 'Technill'),
                                             ])
+    tapa_prensa_mostrar = fields.Boolean('Mostrar en Informe?',default=True)                                            
     img_tapa_prensa = fields.Binary('Vista general tapa prensa')
     img_tapa_prensa_2 = fields.Binary('Vista general tapa prensa 2')
     img_tapa_prensa_3 = fields.Binary('Vista general tapa prensa 3')
     select_6_1 = fields.One2many('method_hidropower.condicion_prensa', 'informe_entrada_id', string='Condición Prensa')
     select_6_2 = fields.One2many('method_hidropower.accion_prensa', 'informe_entrada_id', string='Acción Prensa')
     select_6_3 = fields.Text('6.3 Texto fijo')
+
+    piston_mostrar = fields.Boolean('Mostrar en Informe?',default=True)                                            
     img_piston = fields.Binary('Vista general pistón') 
     img_piston_2 = fields.Binary('Vista general pistón 2')
     img_piston_3 = fields.Binary('Vista general pistón 3')
@@ -321,6 +334,7 @@ class InformeEntrada(models.Model):
     select_7_2 = fields.One2many('method_hidropower.accion_piston', 'informe_entrada_id', string='Acción realizar pistón')
     select_7_3 = fields.Text('7.3 Texto fijo')
 
+    otros_mostrar = fields.Boolean('Mostrar en Informe?',default=True)                                            
     img_otros_1 = fields.Binary('Imagen 1')
     img_otros_2 = fields.Binary('Imagen 2')
     img_otros_3 = fields.Binary('Imagen 3')

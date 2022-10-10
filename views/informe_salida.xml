@@ -213,7 +213,7 @@
 
     <!--method_hidropower.model_method_hidropower_concluciones-->
         <record id="method_hidropower.informe_salida_conclucion_action_window" model="ir.actions.act_window">
-        <field name="name">Concluciones Informe Salida</field>
+        <field name="name">Conclusiones Informe Salida</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">method_hidropower.concluciones</field>
         <field name="view_mode">tree,form</field>

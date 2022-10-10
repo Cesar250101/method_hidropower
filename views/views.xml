@@ -131,6 +131,7 @@
 
                   <page string="Vista general del desarme" name="vista_general_desarme">
                     <group name="desarme" string="Vista general del desarme">
+                      <field name="desarme_mostrar"/>
                       <field name="img_desarme_1"/>
                       <field name="img_desarme_2"/>
                       <field name="img_desarme_3"/>
@@ -139,6 +140,7 @@
                   </page>
                   <page string="Vista general del vástago" name="vista_general_vastago">                  
                     <group name="vastago" string="Vista general del vástago">
+                      <field name="vastago_mostrar"/>
                       <field name="img_vastago_1"/>
                       <field name="img_vastago_2"/>
                       <field name="img_vastago_3"/>
@@ -151,6 +153,7 @@
                   <!--Daño vástago-->
                   <page string="Vista daño vástago" name="daño_vastago">                  
                     <group name="daño_vastago" string="Vista daño vástago">
+                      <field name="vastago_daño_mostrar"/>
                       <field name="img_vastago_daño"/>
                       <field name="img_vastago_daño_2"/>
                       <field name="img_vastago_daño_3"/>
@@ -163,6 +166,7 @@
 
                   <page string="Vista general de anclaje de vástago" name="vista_general_anclaje_vastago">                                                      
                     <group name="anclaje" string="Vista general de anclaje de vástago">
+                      <field name="anclaje_vastago_mostrar"/>
                       <field name="img_anclaje_vastago"/>
                       <field name="img_anclaje_vastago_2"/>
                       <field name="img_anclaje_vastago_3"/>
@@ -176,6 +180,7 @@
                   </page>                                                          
                   <page string="Vista general de botella" name="vista_general_botella">                                                                        
                     <group name="botella" string="Vista general de botella">
+                      <field name="botella_mostrar"/>
                       <field name="img_botella"/>
                       <field name="img_botella_2"/>
                       <field name="img_botella_3"/>
@@ -186,6 +191,7 @@
                   </page>                                                                              
                   <page string="Zoom interior de botella" name="zoom_interior_botella">                  
                     <group name="zoom_botella" string="Zoom interior de botella">
+                      <field name="interior_botella_mostrar"/>
                       <field name="img_interior_botella"/>
                       <field name="img_interior_botella_2"/>
                       <field name="img_interior_botella_3"/>
@@ -197,6 +203,7 @@
                   </page>                                                                                
                   <page string="Anclaje de botella" name="anclaje_botella">                                                      
                     <group name="anclaje_botella" string="Anclaje de botella">
+                      <field name="anclaje_botella_mostrar"/>
                       <field name="img_anclaje_botella"/>
                       <field name="img_anclaje_botella_2"/>
                       <field name="img_anclaje_botella_3"/>
@@ -210,6 +217,7 @@
                   </page>                                                  
                   <page string="Vista general tapa prensa" name="vista_general_tapa_prensa">                                                                    
                     <group name="prensa" string="Vista general tapa prensa">
+                      <field name="tapa_prensa_mostrar"/>
                       <field name="img_tapa_prensa"/>
                       <field name="img_tapa_prensa_2"/>
                       <field name="img_tapa_prensa_3"/>
@@ -221,6 +229,7 @@
                   </page>                    
                   <page string="Vista general pistón" name="vista_general_pistón">                                                                                      
                     <group name="piston" string="Vista general pistón">
+                      <field name="piston_mostrar"/>
                       <field name="img_piston"/>
                       <field name="img_piston_2"/>
                       <field name="img_piston_3"/>
@@ -232,6 +241,7 @@
                   </page>    
                   <page string="Otros" name="otros">                                                                                      
                     <group name="otros" string="Otros">
+                      <field name="otros_mostrar"/>
                       <field name="img_otros_1"/>
                       <field name="img_otros_2"/>
                       <field name="img_otros_3"/>
