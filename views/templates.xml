@@ -243,7 +243,9 @@
                                     <td valign="top">
                                         <span t-field="o.txt_9_1"/>
                                     </td>
-                                </tr>                            
+                                </tr>
+                                <br></br>              
+                                <br></br>      
                                 <tr>
                                     <td>
                                         <span><strong>11. Fotografia  graficos test senso node parker</strong></span><br></br>                                    
