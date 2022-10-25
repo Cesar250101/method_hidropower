@@ -10,6 +10,30 @@
     </record>
 
 
+      <!-- Formulario Picking-->
+    <record id="method_hidropower.view_picking_form" model="ir.ui.view">
+      <field name="name">stock.view.picking.form</field>
+      <field name="model">stock.picking</field>
+      <field name="inherit_id" ref="stock.view_picking_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='origin']" position="after">      
+          <field name="rma_id"/>
+        </xpath>                    
+      </field>
+    </record>
+
+    <!--Picking tree-->
+    <record id="method_hidropower.vpicktree" model="ir.ui.view">
+      <field name="name">method.hidropower.vpicktree</field>
+      <field name="model">stock.picking</field>
+      <field name="inherit_id" ref="stock.vpicktree"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='name']" position="after">      
+          <field name="rma_id"/>
+        </xpath>                    
+      </field>
+    </record>
+
       <!-- Formulario de Produtos -->
     <record id="method_hidropower.view_repair_order_form" model="ir.ui.view">
       <field name="name">method.hidropower.view.repair.order.form</field>
