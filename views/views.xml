@@ -18,7 +18,6 @@
       <field name="arch" type="xml">
         <xpath expr="//field[@name='origin']" position="after">      
           <field name="rma_id"/>
-          <field name="invoice_id"/>
         </xpath>                    
       </field>
     </record>
